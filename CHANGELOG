@@ -1,0 +1,9 @@
+Started integrating with CI enviornment. - success
+Installing runner in cuda enviornment. - success
+Building in that environment. - success
+imagehandler base class - working
+imagehandler virtual functions - working
+constructors -completed
+builder base class
+builder functions
+builder class which has method to build from other class,img,path and functions to pass rvalue or ref to other class.

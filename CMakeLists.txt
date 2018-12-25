@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 2.8)
+project( displayImage )
+find_package( OpenCV REQUIRED )
+#target_compile_features(displayImage PUBLIC cxx_std_11)
+set (CMAKE_CXX_STANDARD 11)
+add_subdirectory(builder)
+add_subdirectory(imagehandler)
+add_subdirectory(src)
+
+#add_executable( displayImage ./src/DisplayImage.cpp )
+#target_link_libraries( displayImage ${OpenCV_LIBS} )
