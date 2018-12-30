@@ -3,7 +3,7 @@
 #include<iostream>
 #include<opencv2/opencv.hpp>
 #endif
-
+#define BUID_INC
 #endif
 #ifndef IMG_INC
 #include <imagehandler/include/imagehandler.h>
@@ -20,4 +20,3 @@ private:
   struct image { std::string path; cv::Mat img;};
 
 };
-#define BUID_INC
