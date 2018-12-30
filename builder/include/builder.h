@@ -10,11 +10,11 @@
 #endif
 
 
-class builder{
+class builderi{
 public:
-  builder() {this->image.path=NULL;this->image.img=NULL;}
-  builder& loadimage(std::string);
-  builder& assignimg(cv::Mat&);
+  builderi() {/*this->image.path=NULL;this->image.img=NULL;*/}
+  builderi& loadimage(std::string);
+  builderi& assignimg(cv::Mat&);
 
 private:
   struct image { std::string path; cv::Mat img;};
