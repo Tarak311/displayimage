@@ -1,5 +1,5 @@
 #ifndef BUID_INC
-#def TOBE_IMG_INC
+#define TOBE_IMG_INC
 #include "include/builder.h"
 #endif
 #ifndef IMG_INC

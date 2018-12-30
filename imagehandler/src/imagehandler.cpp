@@ -1,6 +1,6 @@
 /* This is the base class for most of the processing class */
 #ifndef IMG_INC
-#def TOBE_BUILD_INC
+#define TOBE_BUILD_INC
 #include "include/imagehandler.h"
 #endif
 #ifndef BUID_INC
