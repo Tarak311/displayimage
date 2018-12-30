@@ -23,6 +23,8 @@ class imagehandler {
 		 imagehandler& gethandler();
 		 virtual void process(void);
 
+		 builder *handlerbuild;
+
 	private:
 
 		std::string path;
