@@ -1,13 +1,13 @@
 
 #ifndef IMG_INC
+#include<iostream>
+#include<opencv2/opencv.hpp>
+#include<string>
 #define IMG_INC
 #endif
 #ifndef BUILD_INC
 #include <builder/include/builder.h>
 #endif
-#include<iostream>
-#include<opencv2/opencv.hpp>
-#include<string>
 
 class imagehandler {
 
