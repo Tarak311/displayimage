@@ -1,13 +1,15 @@
 /* This is the base class for most of the processing class */
 #ifndef IMG_INC
+#include<iostream>
+#include<opencv2/opencv.hpp>
+#include "include/imagehandler.h"
 #define IMG_INC
 #endif
 #ifndef BUILD_INC
 #include <builder/include/builder.h>
 #endif
-#include<iostream>
-#include<opencv2/opencv.hpp>
-#include "include/imagehandler.h"
+
+
 
 
 
