@@ -26,7 +26,7 @@ class imagehandler {
 		 imagehandler& gethandler();
 		 virtual void process(void);
 
-		 builderi *handlerbuild;
+		 builder *handlerbuild;
 
 	private:
 
