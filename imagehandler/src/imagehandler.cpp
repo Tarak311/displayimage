@@ -1,9 +1,7 @@
 /* This is the base class for most of the processing class */
 #ifndef IMG_INC
-#include<iostream>
-#include<opencv2/opencv.hpp>
+#def TOBE_BUILD_INC
 #include "include/imagehandler.h"
-#define IMG_INC
 #endif
 #ifndef BUID_INC
 #include <builder/include/builder.h>

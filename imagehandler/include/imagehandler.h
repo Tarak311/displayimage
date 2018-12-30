@@ -6,9 +6,10 @@
 #define IMG_INC
 #endif
 #ifndef BUID_INC
+#ifndef TOBE_BUILD_INC
 #include <builder/include/builder.h>
 #endif
-
+#endif
 class imagehandler {
 
 	public:

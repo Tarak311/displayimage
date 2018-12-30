@@ -6,7 +6,9 @@
 #define BUID_INC
 #endif
 #ifndef IMG_INC
+#ifndef TOBE_IMG_INC
 #include <imagehandler/include/imagehandler.h>
+#endif
 #endif
 
 
