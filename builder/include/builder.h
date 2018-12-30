@@ -1,4 +1,4 @@
-#ifndef BUILD_INC
+#ifndef BUID_INC
 #ifndef IMG_INC
 #include<iostream>
 #include<opencv2/opencv.hpp>

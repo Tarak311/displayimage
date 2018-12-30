@@ -5,7 +5,7 @@
 #include "include/imagehandler.h"
 #define IMG_INC
 #endif
-#ifndef BUILD_INC
+#ifndef BUID_INC
 #include <builder/include/builder.h>
 #endif
 
