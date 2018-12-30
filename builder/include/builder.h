@@ -5,20 +5,23 @@
 #endif
 #define BUID_INC
 #endif
+
+#ifndef IMG_INC
+class imagehandler;
+#endif
+
+class builder{
+public:
+  builder() {/*this->image.path=NULL;this->image.img=NULL;*/}
+  builder& loadimage(std::string);
+  builder& assignimg(cv::Mat&);
+  imagehandler& build();
+private:
+  struct image { std::string path; cv::Mat img;};
+
+};
 #ifndef IMG_INC
 #ifndef TOBE_IMG_INC
 #include <imagehandler/include/imagehandler.h>
 #endif
 #endif
-
-
-class builderi{
-public:
-  builderi() {/*this->image.path=NULL;this->image.img=NULL;*/}
-  builderi& loadimage(std::string);
-  builderi& assignimg(cv::Mat&);
-
-private:
-  struct image { std::string path; cv::Mat img;};
-
-};

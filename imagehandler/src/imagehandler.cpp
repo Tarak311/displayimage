@@ -1,11 +1,12 @@
 /* This is the base class for most of the processing class */
-#ifndef IMG_INC
-#define TOBE_BUILD_INC
-#include "include/imagehandler.h"
-#endif
 #ifndef BUID_INC
+#define TOBE_IMG_INC
 #include <builder/include/builder.h>
 #endif
+#ifndef IMG_INC
+#include "include/imagehandler.h"
+#endif
+
 
 
 

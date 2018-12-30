@@ -1,15 +1,17 @@
 
 #ifndef IMG_INC
+#ifndef BUID_INC
 #include<iostream>
 #include<opencv2/opencv.hpp>
 #include<string>
 #define IMG_INC
 #endif
+#endif
+
 #ifndef BUID_INC
-#ifndef TOBE_BUILD_INC
 #include <builder/include/builder.h>
 #endif
-#endif
+
 class imagehandler {
 
 	public:
