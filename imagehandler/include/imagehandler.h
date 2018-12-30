@@ -3,7 +3,7 @@
 #include<iostream>
 #include<opencv2/opencv.hpp>
 #include<string>
-#define IMG_INC
+
 #endif
 #ifndef BUID_INC
 #include <builder/include/builder.h>
@@ -34,3 +34,4 @@ class imagehandler {
 		int flags;
 
 };
+#define IMG_INC
