@@ -24,3 +24,4 @@ image imagehandler::process(int i){ image imgst; imgst.path = this->path;imgst.i
 // [[deprecated]] imagehandler::imagehandler(cv::Mat&& im){this->img=&im;} // MOVE SCHEMATICS USED - DEPRECATED : REMOVED
 //imagehandler::imagehandler(const imagehandler& ih) {this->img = ih.img;} //copy constructor -  deleted
 cllist& buildfuntion(int type,image& imm){if(type==0){cllist& cli = imagehandler::handlerbuild->createfromimg(imm,type); return cli; }}
+																																					// uninitalized VARIABLE
