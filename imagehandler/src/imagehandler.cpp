@@ -7,10 +7,6 @@
 #include "include/imagehandler.h"
 #endif
 
-#define container_of(ptr, type, member) ({                      \
-        const typeof( ((type *)0)->member ) *__mptr = (ptr);    \
-        (type *)( (char *)__mptr - offsetof(type,member) );})
-
 
 
 [[deprecated]]  imagehandler::imagehandler(std::string name){cv::Mat img_temp = cv::imread(name, cv::IMREAD_COLOR);this->img = &img_temp;}
@@ -20,7 +16,7 @@ int imagehandler::showimage(std::string win,int flag){cv::namedWindow(win, cv::W
 imagehandler& imagehandler::gethandler(){return *this;}
 image imagehandler::process(int i){ image imgst; imgst.path = this->path;imgst.img = *(this->img);imgst.input = this->imagesaved;imgst.buildimghd=&buildfuntion;this->outputimg[i]=&imgst ; return imgst;}
 cllist& buildfuntion(int type,image& imm){if(type==0){cllist& cli = imagehandler::handlerbuild.createfromimg(imm,type); return cli; }}
-// [[deprecated]] imagehandler::imagehandler(cv::Mat& im){this->img=&im;} // PASSED BY REFRENCE - DEPRECATED : REMOVED
-// [[deprecated]] imagehandler::imagehandler(cv::Mat&& im){this->img=&im;} // MOVE SCHEMATICS USED - DEPRECATED : REMOVED
+ [[deprecated]] imagehandler::imagehandler(cv::Mat& im){this->img=&im;} // PASSED BY REFRENCE - DEPRECATED : REMOVED
+ [[deprecated]] imagehandler::imagehandler(cv::Mat&& im){this->img=&im;} // MOVE SCHEMATICS USED - DEPRECATED : REMOVED
 //imagehandler::imagehandler(const imagehandler& ih) {this->img = ih.img;} //copy constructor -  deleted																																				// uninitalized VARIABLE
 // create  createfromimg funtion a
