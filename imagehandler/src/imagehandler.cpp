@@ -6,8 +6,10 @@
 #ifndef IMG_INC
 #include "include/imagehandler.h"
 #endif
-cllist& buildimghdf(int type);
 
+#define container_of(ptr, type, member) ({                      \
+        const typeof( ((type *)0)->member ) *__mptr = (ptr);    \
+        (type *)( (char *)__mptr - offsetof(type,member) );})
 
 
 
@@ -17,8 +19,8 @@ imagehandler::imagehandler(imagehandler&& ih):img(ih.img),path(ih.path){} // mov
 int imagehandler::showimage(std::string win,int flag){cv::namedWindow(win, cv::WINDOW_NORMAL);cv::imshow(win, *(this->img));return 0;}
 imagehandler& imagehandler::gethandler(){return *this;}
 
-image& imagehandler::process(){ image imgst; imgst.path = this->path;imgst.img = *(this->img);imgst.input = this->imagesaved;imgst.buildimghd=&buildimghdf;}
+image imagehandler::process(int i){ image imgst; imgst.path = this->path;imgst.img = *(this->img);imgst.input = this->imagesaved;imgst.buildimghd=&buildfuntion;this->outputimg[i]=&imgst ; return imgst;}
 // [[deprecated]] imagehandler::imagehandler(cv::Mat& im){this->img=&im;} // PASSED BY REFRENCE - DEPRECATED : REMOVED
 // [[deprecated]] imagehandler::imagehandler(cv::Mat&& im){this->img=&im;} // MOVE SCHEMATICS USED - DEPRECATED : REMOVED
 //imagehandler::imagehandler(const imagehandler& ih) {this->img = ih.img;} //copy constructor -  deleted
-cllist& buildimghdf(int type){}
+cllist& buildfuntion(int type,image& imm){if(type==BASE){cllist& cli = imagehandle::builder.builder().createfromimg(imm,type); return cli; }}
