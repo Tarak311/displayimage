@@ -8,16 +8,18 @@
 
 #ifndef IMG_INC
 class imagehandler;
-#endif
-
+#endif                                                                /* it should have switch statement which selects which type to use*/
+struct image { std::string path; cv::Mat img; image* output; image* input; cllist& (*buildimghd)(int);imagehandler *handler};/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
+struct cllist {int type ;imagehandler *imghd };
 class builder{
 public:
-  builder() {/*this->image.path=NULL;this->image.img=NULL;*/}
+  builder() {}
   builder& loadimage(std::string);
   builder& assignimg(cv::Mat&);
-  imagehandler& build();
+  cllist& createfromimg(image&,int/*type*/); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
+
 private:
-  struct image { std::string path; cv::Mat img;};
+  image imagebuild;
 
 };
 #ifndef IMG_INC
@@ -25,3 +27,4 @@ private:
 #include <imagehandler/include/imagehandler.h>
 #endif
 #endif
+// function is supposed to create image struct and assign function pointer. These are process(),createfromimg().s
