@@ -23,10 +23,12 @@ class imagehandler {
 		 imagehandler(const imagehandler&)=delete;
 		 imagehandler(imagehandler&);
 		 imagehandler(imagehandler&&);
+
 		 int showimage(std::string win,int flag);
 		 imagehandler& gethandler();
 		 virtual image process(int);  // This function handle the process of creating a new image structure. and then call it's create funtion pinter
- 	 		// We can have a pointer to function as a argument and it will assigned to function pointer.
+
+			// We can have a pointer to function as a argument and it will assigned to function pointer.
 		static	builder handlerbuild;
 
 	private:
