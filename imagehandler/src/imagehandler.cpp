@@ -17,7 +17,7 @@ imagehandler::imagehandler(imagehandler&& ih):img(ih.img),path(ih.path){} // mov
 int imagehandler::showimage(std::string win,int flag){cv::namedWindow(win, cv::WINDOW_NORMAL);cv::imshow(win, *(this->img));return 0;}
 imagehandler& imagehandler::gethandler(){return *this;}
 
-image& imagehandler::process(){ image imgst; imgst.path = this->path;imgst.img = *(this->img);imgst.input = this->imagesaved;buildimghd=&buildimghdf;}
+image& imagehandler::process(){ image imgst; imgst.path = this->path;imgst.img = *(this->img);imgst.input = this->imagesaved;imgst.buildimghd=&buildimghdf;}
 // [[deprecated]] imagehandler::imagehandler(cv::Mat& im){this->img=&im;} // PASSED BY REFRENCE - DEPRECATED : REMOVED
 // [[deprecated]] imagehandler::imagehandler(cv::Mat&& im){this->img=&im;} // MOVE SCHEMATICS USED - DEPRECATED : REMOVED
 //imagehandler::imagehandler(const imagehandler& ih) {this->img = ih.img;} //copy constructor -  deleted
