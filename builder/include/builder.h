@@ -10,7 +10,7 @@
 class imagehandler;
 #endif
 
-struct cllist* {int type ;imagehandler *imghd;};                                                   /* it should have switch statement which selects which type to use*/
+struct cllist {int type ;imagehandler *imghd;};                                                   /* it should have switch statement which selects which type to use*/
 struct image { std::string path; cv::Mat img; image* output; image* input; cllist* (*buildimghd)(int);imagehandler *handler;};/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
 
 class builder{
