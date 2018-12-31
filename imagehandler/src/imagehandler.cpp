@@ -6,8 +6,8 @@
 #ifndef IMG_INC
 #include "include/imagehandler.h"
 #endif
+cllist& buildimghdf(int type);
 
-cllist& buildimghdf(int type){}
 
 
 
@@ -21,3 +21,4 @@ image& imagehandler::process(){ image imgst; imgst.path = this->path;imgst.img =
 // [[deprecated]] imagehandler::imagehandler(cv::Mat& im){this->img=&im;} // PASSED BY REFRENCE - DEPRECATED : REMOVED
 // [[deprecated]] imagehandler::imagehandler(cv::Mat&& im){this->img=&im;} // MOVE SCHEMATICS USED - DEPRECATED : REMOVED
 //imagehandler::imagehandler(const imagehandler& ih) {this->img = ih.img;} //copy constructor -  deleted
+cllist& buildimghdf(int type){}
