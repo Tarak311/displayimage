@@ -18,7 +18,7 @@ public:
   builder() {}
   builder& loadimage(std::string);
   builder& assignimg(cv::Mat&);
-  cllist& createfromimg(image&,int/*type*/); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
+  cllist createfromimg(image&,int/*type*/); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
 
 private:
   image imagebuild;
