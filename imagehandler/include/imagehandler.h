@@ -12,7 +12,7 @@
 #include <builder/include/builder.h>
 #endif
 
-cllist& buildfuntion(int type);
+cllist* buildfuntion(int type);
 class imagehandler {
 
 	public:
