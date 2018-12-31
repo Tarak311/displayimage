@@ -11,7 +11,7 @@
 #ifndef BUID_INC
 #include <builder/include/builder.h>
 #endif
-#include <funtional>
+
 
 class imagehandler {
 
