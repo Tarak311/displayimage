@@ -27,7 +27,7 @@ class imagehandler {
 		 imagehandler& gethandler();
 		 virtual image process(int);  // This function handle the process of creating a new image structure. and then call it's create funtion pinter
  	 		// We can have a pointer to function as a argument and it will assigned to function pointer.
-		static	builder *handlerbuild= new builder;
+		static	builder *handlerbuild= new builder();
 
 	private:
 		image *imagesaved;
