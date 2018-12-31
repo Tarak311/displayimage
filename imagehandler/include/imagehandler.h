@@ -17,7 +17,7 @@ class imagehandler {
 
 	public:
 
-		 [[deprecated]]  imagehandler(std::string name);
+		 [[deprecated]] imagehandler(std::string name);
 		 [[deprecated]] imagehandler(cv::Mat& im);
 		 [[deprecated]] imagehandler(cv::Mat&& im);
 		 imagehandler(const imagehandler&)=delete;
