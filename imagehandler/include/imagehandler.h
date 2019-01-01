@@ -17,28 +17,19 @@ class builderlistd: public listd
 
 
 class imagehandler {
-
 	public:
-
-
 		 imagehandler(image*);
 		 //imagehandler(cv::Mat&& im);
 		 imagehandler(const imagehandler&)=delete;
 		 imagehandler(imagehandler&);
 		 imagehandler(imagehandler&&);
-
 		 int showimage(std::string win,int flag);
-
 		 virtual builderlistd process(int);
 		 static	builder* handlerbuild;
-
 	private:
 		image *imagesaved;
 		image *outputimg;
 		std::string path;
-
-
 		std::string currentWindow;
 		int flags;
-
 };
