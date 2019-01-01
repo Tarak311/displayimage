@@ -9,7 +9,7 @@ int main()
 
 	cv::Mat img;
 	builder bb;
-	builder bbn = bb->loadimage("i.jpg");
+	builder bbn = bb.loadimage("i.jpg");
 	img = cv::imread("i.jpg", cv::IMREAD_COLOR) ;
 	image imga;
 	imga.img=img;
