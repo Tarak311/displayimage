@@ -12,19 +12,16 @@ int main()
 	std::cout<<"sts2"<<std::endl;
 	imagehandler* bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE).imagehandlerd;
 	std::cout<<"sts3"<<std::endl;
-	//bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
+	bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
 	img = cv::imread("i.jpg", cv::IMREAD_COLOR) ;
 	image imga;
 	imga.img=img;
 	imagehandler* ih = new imagehandler(&imga);
   std::cout<<"sts4"<<std::endl;
-	cv::compare(img,bbn->imagesaved->img,dst,cv::CMP_EQ);
-	//cv::bitwise_xor(img, bbn->imagesaved->img, dst);
+	//cv::compare(img,bbn->imagesaved->img,dst,cv::CMP_EQ);
+
 	std::cout<<"sts5"<<std::endl;
-if(cv::countNonZero(dst) > 0) //check non-0 pixels
-   std::cout<<"yep"<<std::endl;
-else
-   std::cout << "oo" << '\n';
+
 	//std::cout<<"Enter the path:"<<std::endl;
 	//std::cin>>path;
 	//imagehandler im(path);
