@@ -19,7 +19,7 @@ class builderlistd: public listd
 class imagehandler {
 	public:
 		 imagehandler(image*);
-		 imagehandler(void);
+		 //imagehandler(void);
 		 imagehandler(const imagehandler&)=delete;
 		 imagehandler(imagehandler&);
 		 imagehandler(imagehandler&&);
