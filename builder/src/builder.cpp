@@ -14,8 +14,8 @@ builder& builder::loadimage(std::string path)
   image* immm = new image;
   this->imagebuild=immm;
   this->imagebuild->img = img_temp;
-  cv::namedWindow("Display Window", cv::WINDOW_AUTOSIZE);
-  cv::imshow("Display Window", this->imagebuild->img);
+  // cv::namedWindow("Display Window", cv::WINDOW_AUTOSIZE);
+  // cv::imshow("Display Window", this->imagebuild->img);
   return *this;
 }
 imhdlistd  builder::createfromimg(int TYPE){ if(TYPE==IMGHDTYPE){ std::cout<<"creating imagehandler object"<<std::endl; imagehandler* ih = new imagehandler(this->imagebuild); ih->handlerbuild=this;imhdlistd imhdli; imhdli.imagehandlerd=ih; imhdli.type=IMGHDTYPE; return imhdli;}}

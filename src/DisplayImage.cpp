@@ -12,7 +12,7 @@ int main()
 	std::cout<<"sts2"<<std::endl;
 	imagehandler* bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE).imagehandlerd;
 	std::cout<<"sts3"<<std::endl;
-	//bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
+	bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
 	img = cv::imread("i.jpg", cv::IMREAD_COLOR) ;
 	image imga;
 	imga.img=img;
