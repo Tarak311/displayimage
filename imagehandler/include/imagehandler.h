@@ -29,10 +29,8 @@ class imagehandler {
 
 		 int showimage(std::string win,int flag);
 
-		 virtual builderlistd process(int);  // This function handle the process of creating a new image structure. and then call it's create funtion pinter
-
-			// We can have a pointer to function as a argument and it will assigned to function pointer.
-		static	builder* handlerbuild;
+		 virtual builderlistd process(int);
+		 static	builder* handlerbuild;
 
 	private:
 		image *imagesaved;
