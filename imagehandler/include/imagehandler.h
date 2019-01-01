@@ -21,8 +21,8 @@ class imagehandler {
 	public:
 
 
-		 imagehandler(cv::Mat& im);
-		 imagehandler(cv::Mat&& im);
+		 imagehandler(image* im);
+		 //imagehandler(cv::Mat&& im);
 		 imagehandler(const imagehandler&)=delete;
 		 imagehandler(imagehandler&);
 		 imagehandler(imagehandler&&);
