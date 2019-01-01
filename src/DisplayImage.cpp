@@ -9,11 +9,12 @@ int main()
 
 	cv::Mat img;
 	builder bb;
-	imagehandler* ih = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE).imagehandlerd;
+	img = cv::imread("i.jpg", cv::IMREAD_COLOR) ;
+	imagehandler* ih = new imagehandler;
 	std::cout<<"Enter the path:"<<std::endl;
 	std::cin>>path;
 	//imagehandler im(path);
-	img = cv::imread(path, cv::IMREAD_COLOR) ;
+
 	//im.showimage("Yeah",0);
 	cv::namedWindow("Display Window", cv::WINDOW_AUTOSIZE);
 	cv::imshow("Display Window", img);
