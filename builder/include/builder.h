@@ -22,7 +22,7 @@ class builder{
 public:
 
   builder& loadimage(std::string);
-  imhdlistd createfromimg(image&,int); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
+  imhdlistd createfromimg(int); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
   image* imagebuild;
   std::string path;
 };
