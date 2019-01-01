@@ -20,7 +20,7 @@ int main()
 if(cv::countNonZero(dst) > 0) //check non-0 pixels
    std::cout<<"yep"<<std::endl;
 else
-   std::std::cout << "oo" << '\n';
+   std::cout << "oo" << '\n';
 	//std::cout<<"Enter the path:"<<std::endl;
 	//std::cin>>path;
 	//imagehandler im(path);
