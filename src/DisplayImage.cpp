@@ -12,7 +12,7 @@ int main()
 	img = cv::imread("i.jpg", cv::IMREAD_COLOR) ;
 	image imga;
 	imga.img=img;
-	imagehandler* ih = new imagehandler(imga);
+	imagehandler* ih = new imagehandler(&imga);
 	std::cout<<"Enter the path:"<<std::endl;
 	std::cin>>path;
 	//imagehandler im(path);
