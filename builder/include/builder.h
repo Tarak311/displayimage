@@ -1,3 +1,4 @@
+#define IMGHDTYPE 001;
 #ifndef BUID_INC
 #ifndef IMG_INC
 #include<iostream>
@@ -11,9 +12,14 @@ class imagehandler;
 #endif
 
 /*************************************** To be moved to a seperate file *********************************************************************************************************************************************************/
-class listd {int type;};
+class listd
+{
+ public:
+   int type;
+};
 class imhdlistd: public listd
-{imagehandler* imagehandlerd;};
+{public:
+  imagehandler* imagehandlerd;};
 struct image { std::string path; cv::Mat img; image* output; image* input;imagehandler *handler;};/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
 /******************************************************************************************************************************************************************************************************************************************************************************/
 
