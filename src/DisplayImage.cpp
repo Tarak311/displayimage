@@ -15,7 +15,11 @@ int main()
 	image imga;
 	imga.img=img;
 	imagehandler* ih = new imagehandler(&imga);
-	if (bbn->imagesaved->img){std::cout<<"whoah"<<std::endl;}
+	cv::bitwise_xor(img, bbn->imagehandler->img, dst);
+if(cv::countNonZero(dst) > 0) //check non-0 pixels
+   std::cout<<"yep"<<std::endl;
+else
+   std::std::cout << "oo" << '\n';
 	//std::cout<<"Enter the path:"<<std::endl;
 	//std::cin>>path;
 	//imagehandler im(path);
