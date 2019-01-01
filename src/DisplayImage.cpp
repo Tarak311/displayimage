@@ -10,20 +10,21 @@ int main()
 	cv::Mat img;
 	builder bb;
 	imagehandler* bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE).imagehandlerd;
-	bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
+	//bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
 	img = cv::imread("i.jpg", cv::IMREAD_COLOR) ;
 	image imga;
 	imga.img=img;
 	imagehandler* ih = new imagehandler(&imga);
-	std::cout<<"Enter the path:"<<std::endl;
-	std::cin>>path;
+	if (bbn.imagesaved->img == img){cout<<"whoah<<endl;}
+	//std::cout<<"Enter the path:"<<std::endl;
+	//std::cin>>path;
 	//imagehandler im(path);
 
 	//im.showimage("Yeah",0);
-	cv::namedWindow("Display Window", cv::WINDOW_AUTOSIZE);
-	cv::imshow("Display Window", img);
+	//cv::namedWindow("Display Window", cv::WINDOW_AUTOSIZE);
+	//cv::imshow("Display Window", img);
 	cv::waitKey(0);
-	cv::destroyWindow("Display Window");
+	//cv::destroyWindow("Display Window");
 	return 0;
 
 }
