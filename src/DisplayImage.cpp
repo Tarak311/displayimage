@@ -18,7 +18,8 @@ int main()
 	imga.img=img;
 	imagehandler* ih = new imagehandler(&imga);
   std::cout<<"sts4"<<std::endl;
-	cv::bitwise_xor(img, bbn->imagesaved->img, dst);
+	cv::compare(img,bbn->imagesaved->img,dst,cv::CMP_EQ);
+	//cv::bitwise_xor(img, bbn->imagesaved->img, dst);
 	std::cout<<"sts5"<<std::endl;
 if(cv::countNonZero(dst) > 0) //check non-0 pixels
    std::cout<<"yep"<<std::endl;
