@@ -12,6 +12,8 @@
 #include <builder/include/builder.h>
 #endif
 
+class builderlistd: public listd
+{builder* builderd;};
 
 
 class imagehandler {

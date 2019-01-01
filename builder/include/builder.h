@@ -12,8 +12,6 @@ class imagehandler;
 
 /*************************************** To be moved to a seperate file *********************************************************************************************************************************************************/
 class listd {int type;};
-class builderlistd: public listd
-{builder* builderd;};
 class imhdlistd: public listd
 {imagehandler* imagehandlerd;};
 struct image { std::string path; cv::Mat img; image* output; image* input;imagehandler *handler;};/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
@@ -24,7 +22,7 @@ class builder{
 public:
   builder() {}
   builder& loadimage(std::string);
-  imhdlistd createfromimg(image&,int/*type*/); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
+  imhdlistd createfromimg(image&,int); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
   image& imagebuild;
   string path;
 };
