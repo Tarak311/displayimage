@@ -7,7 +7,7 @@ std::string path;
 int main()
 {
 
-	cv::Mat img;
+	cv::Mat img,dst;
 	builder bb;
 	imagehandler* bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE).imagehandlerd;
 	//bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
@@ -15,7 +15,8 @@ int main()
 	image imga;
 	imga.img=img;
 	imagehandler* ih = new imagehandler(&imga);
-	cv::bitwise_xor(img, bbn->imagehandler->img, dst);
+
+	cv::bitwise_xor(img, bbn->imagesaved->img, dst);
 if(cv::countNonZero(dst) > 0) //check non-0 pixels
    std::cout<<"yep"<<std::endl;
 else
