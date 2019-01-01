@@ -1,4 +1,4 @@
-#define IMGHDTYPE 001;
+#define IMGHDTYPE 001
 #ifndef BUID_INC
 #ifndef IMG_INC
 #include<iostream>
