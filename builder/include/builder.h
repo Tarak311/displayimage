@@ -20,11 +20,11 @@ struct image { std::string path; cv::Mat img; image* output; image* input;imageh
 
 class builder{
 public:
-  builder() {}
+
   builder& loadimage(std::string);
   imhdlistd createfromimg(image&,int); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
-  image& imagebuild;
-  string path;
+  image* imagebuild =new imagebuild;
+  std::string path;
 };
 
 #ifndef IMG_INC
