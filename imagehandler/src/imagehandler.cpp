@@ -15,4 +15,4 @@ imagehandler::imagehandler(imagehandler&& ih):outputimg(ih.outputimg),imagesaved
 imagehandler::imagehandler(image* im){this->imagesaved=im;}
 //imagehandler::imagehandler(image* im){this->img=&im;}
 int imagehandler::showimage(std::string win,int flag){cv::namedWindow(win, cv::WINDOW_NORMAL);cv::imshow(win, (this->imagesaved->img));return 0;}
-builderlistd imagehandler::process(int TYPE){ if(TYPE==IMGHDTYPE){image im; builderlistd bhdli;im.path = this->path;im.img = *(this->imagesaved->img);im.input = this->imagesaved; builder bu; bu.imagebuild = &im; bu.path=this->path; bhdli->builderd = &bu; return bhdli;}}
+builderlistd imagehandler::process(int TYPE){ if(TYPE==IMGHDTYPE){image im; builderlistd bhdli;im.path = this->path;im.img = (this->imagesaved->img);im.input = this->imagesaved; builder bu; bu.imagebuild = &im; bu.path=this->path; bhdli->builderd = &bu; return bhdli;}}
