@@ -8,7 +8,7 @@ int main()
 {
 
 	cv::Mat img;
-	imagehandler* ih = builder::loadimage("i.jpg").createfromimg(IMGHDTYPE).imagehandlerd;
+	imagehandler* ih = new builder::loadimage("i.jpg").createfromimg(IMGHDTYPE).imagehandlerd;
 	std::cout<<"Enter the path:"<<std::endl;
 	std::cin>>path;
 	//imagehandler im(path);
