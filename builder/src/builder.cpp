@@ -11,8 +11,8 @@ builder& builder::loadimage(std::string path)
 {
   cv::Mat img_temp = cv::imread(path, cv::IMREAD_COLOR);
 // this goes by by and we are left with dangling point
-  image immm;
-  this->imagebuild=&immm;
+  image immm* = new image;
+  this->imagebuild=immm;
   this->imagebuild->img = img_temp;
   cv::namedWindow("Display Window", cv::WINDOW_AUTOSIZE);
   cv::imshow("Display Window", this->imagebuild->img);
