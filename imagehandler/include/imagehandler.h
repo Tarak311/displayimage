@@ -13,7 +13,7 @@
 #endif
 
 class builderlistd: public listd
-{builder* builderd;};
+{public: builder* builderd;};
 
 
 class imagehandler {
