@@ -15,7 +15,7 @@ int main()
 	image imga;
 	imga.img=img;
 	imagehandler* ih = new imagehandler(&imga);
-	if (bbn.imagesaved->img == img){cout<<"whoah<<endl;}
+	if (bbn.imagesaved->img == img){cout<<"whoah"<<endl;}
 	//std::cout<<"Enter the path:"<<std::endl;
 	//std::cin>>path;
 	//imagehandler im(path);
