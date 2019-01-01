@@ -10,6 +10,7 @@ int main()
 	cv::Mat img;
 	builder bb;
 	imagehandler* bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE).imagehandlerd;
+	bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
 	img = cv::imread("i.jpg", cv::IMREAD_COLOR) ;
 	image imga;
 	imga.img=img;
