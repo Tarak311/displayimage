@@ -24,7 +24,7 @@ class imagehandler {
 		 imagehandler(imagehandler&);
 		 imagehandler(imagehandler&&);
 		 int showimage(std::string win,int flag);
-		 virtual builderlistd process(int);
+		 virtual builderlistd& process(int);
 		 builder* handlerbuild;
 		 image *imagesaved;
 	private:
