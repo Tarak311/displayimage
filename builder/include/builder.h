@@ -23,7 +23,7 @@ public:
 
   builder& loadimage(std::string);
   imhdlistd createfromimg(image&,int); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
-  image* imagebuild =new imagebuild;
+  image* imagebuild;
   std::string path;
 };
 
