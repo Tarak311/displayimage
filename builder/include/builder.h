@@ -10,20 +10,25 @@
 class imagehandler;
 #endif
 
-struct cllist {int type ;imagehandler *imghd;};                                                   /* it should have switch statement which selects which type to use*/
-struct image { std::string path; cv::Mat img; image* output; image* input; cllist (*buildimghd)(int);imagehandler *handler;};/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
+/*************************************** To be moved to a seperate file *********************************************************************************************************************************************************/
+class listd {int type;};
+class builderlistd: public listd
+{builder* builderd;};
+class imhdlistd: public listd
+{imagehandler* imagehandlerd;};
+struct image { std::string path; cv::Mat img; image* output; image* input;imagehandler *handler;};/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
+/******************************************************************************************************************************************************************************************************************************************************************************/
+
 
 class builder{
 public:
   builder() {}
   builder& loadimage(std::string);
-  builder& assignimg(cv::Mat&);
-  cllist createfromimg(image&,int/*type*/); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
-
-private:
-  image imagebuild;
-
+  imhdlistd createfromimg(image&,int/*type*/); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
+  image& imagebuild;
+  string path;
 };
+
 #ifndef IMG_INC
 #ifndef TOBE_IMG_INC
 #include <imagehandler/include/imagehandler.h>

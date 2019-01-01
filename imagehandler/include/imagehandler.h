@@ -12,12 +12,13 @@
 #include <builder/include/builder.h>
 #endif
 
-cllist buildfuntion(int type);
+
+
 class imagehandler {
 
 	public:
 
-		 imagehandler(std::string name);
+
 		 imagehandler(cv::Mat& im);
 		 imagehandler(cv::Mat&& im);
 		 imagehandler(const imagehandler&)=delete;
@@ -25,18 +26,18 @@ class imagehandler {
 		 imagehandler(imagehandler&&);
 
 		 int showimage(std::string win,int flag);
-		 imagehandler& gethandler();
-		 virtual image process(int);  // This function handle the process of creating a new image structure. and then call it's create funtion pinter
+
+		 virtual builderlistd process(int);  // This function handle the process of creating a new image structure. and then call it's create funtion pinter
 
 			// We can have a pointer to function as a argument and it will assigned to function pointer.
-		static	builder handlerbuild;
+		static	builder* handlerbuild;
 
 	private:
 		image *imagesaved;
-		image *outputimg[10];
+		image *outputimg;
 		std::string path;
-		cv::Mat* img;
-		cv::Mat* opimg;
+
+
 		std::string currentWindow;
 		int flags;
 

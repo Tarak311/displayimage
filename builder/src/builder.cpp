@@ -7,6 +7,5 @@
 #endif
 
 
-builder& builder::loadimage(std::string path){}
-builder& builder::assignimg(cv::Mat& immat){}
-cllist  builder::createfromimg(image& inpimg,int type){if(type==0){ std::cout<<"creating imagehandler object"<<std::endl; imagehandler* ih = new imagehandler(inpimg.img);cllist cli;cli.imghd=ih; return cli;}}
+builder& builder::loadimage(std::string path){cv::Mat img_temp = cv::imread(name, cv::IMREAD_COLOR);this->imagebuild->img = &img_temp;return this;}
+imhdlistd  builder::createfromimg(int TYPE){ if(TYPE==IMGHDTYPE){ std::cout<<"creating imagehandler object"<<std::endl; imagehandler* ih = new imagehandler(this->imagebuild->img); ih->handlerbuild=this;imhdlistd imhdli; imhdli->imagehandlerd=ih; imhdli.type=IMGHDTYPE; return imhdli;}}
