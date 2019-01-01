@@ -7,15 +7,5 @@
 #endif
 
 
-builder& builder::loadimage(std::string path)
-{
-  cv::Mat img_temp = cv::imread(path, cv::IMREAD_COLOR);
-// this goes by by and we are left with dangling point so now we have use the power of dynamic memmory allocation which has long scope.
-  image* immm = new image;
-  this->imagebuild=immm;
-  this->imagebuild->img = img_temp;
-  // cv::namedWindow("Display Window", cv::WINDOW_AUTOSIZE);
-  // cv::imshow("Display Window", this->imagebuild->img);
-  return *this;
-}
-imhdlistd  builder::createfromimg(int TYPE){ if(TYPE==IMGHDTYPE){ std::cout<<"creating imagehandler object"<<std::endl; imagehandler* ih = new imagehandler(this->imagebuild); ih->handlerbuild=this;imhdlistd imhdli; imhdli.imagehandlerd=ih; imhdli.type=IMGHDTYPE; return imhdli;}}
+builder& builder::loadimage(std::string path){cv::Mat img_temp = cv::imread(path, cv::IMREAD_COLOR); image* immm = new image;this->imagebuild=immm;this->imagebuild->img = img_temp;return *this;}
+imhdlistd&  builder::createfromimg(int TYPE){ if(TYPE==IMGHDTYPE){ std::cout<<"creating imagehandler object"<<std::endl; imagehandler* ih = new imagehandler(this->imagebuild); ih->handlerbuild=this;imhdlistd* imhdli = new imhdlistd; imhdli->imagehandlerd=ih; imhdli->type=IMGHDTYPE; return *imhdli;}}
