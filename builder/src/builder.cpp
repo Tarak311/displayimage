@@ -10,7 +10,7 @@
 builder& builder::loadimage(std::string path)
 {
   cv::Mat img_temp = cv::imread(path, cv::IMREAD_COLOR);
-// this goes by by and we are left with dangling point
+// this goes by by and we are left with dangling point so now we have use the power of dynamic memmory allocation which has long scope.
   image* immm = new image;
   this->imagebuild=immm;
   this->imagebuild->img = img_temp;
