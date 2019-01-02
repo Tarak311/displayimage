@@ -32,8 +32,8 @@ struct image
 {
   std::string path;
   cv::Mat img;
-  image* output;
-  image* input;
+  std::shared_ptr<image> output;
+  std::shared_ptr<image> input;
   imagehandler* handler;
 };/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
 /******************************************************************************************************************************************************************************************************************************************************************************/

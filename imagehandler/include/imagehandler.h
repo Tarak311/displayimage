@@ -30,7 +30,7 @@ class imagehandler {
 		 std::shared_ptr<image>  imagesaved;
 	private:
 
-		image *outputimg;
+		std::shared_ptr<image> outputimg;
 		std::string path;
 		std::string currentWindow;
 		int flags;
