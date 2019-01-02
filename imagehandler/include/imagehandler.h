@@ -13,20 +13,20 @@
 #endif
 
 class builderlistd: public listd
-{public: builder* builderd;};
+{public: std::shared_ptr<builder> builderd;};
 
 
 class imagehandler {
 	public:
-			 imagehandler(std::shared_ptr<image>);
+		 imagehandler(std::shared_ptr<image>);
 		 ~imagehandler(){std::cout<<"Item deleted";}
 		 //imagehandler(void);
 		 imagehandler(const imagehandler&)=delete;
 		 imagehandler(imagehandler&);
 		 imagehandler(imagehandler&&);
 		 int showimage(std::string win,int flag);
-		 virtual builderlistd& process(int);
-		 builder* handlerbuild;
+		 virtual std::shared_ptr<builderlistd> process(int);
+		 std::shared_ptr<builder> handlerbuild;
 		 std::shared_ptr<image>  imagesaved;
 	private:
 

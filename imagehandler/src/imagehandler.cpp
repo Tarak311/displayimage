@@ -25,19 +25,19 @@ int imagehandler::showimage(std::string win,int flag)
   return 0;
 }             /*change to op from function*/
 
-builderlistd& imagehandler::process(int TYPE)
+std::shared_ptr<builderlistd> imagehandler::process(int TYPE)
 {
   if(TYPE==IMGHDTYPE)
   {
     std::shared_ptr<image> im(new image);
-    builderlistd* bhdli = new builderlistd();
+    std::shared_ptr<builderlistd> bhdli(new builderlistd());
     im->path = this->path;
     im->img = (this->imagesaved->img);
     im->input = this->imagesaved;
-    builder* bu = new builder;
+    std::shared_ptr<builder> bu(new builder);
     bu->imagebuild = im;
     bu->path=this->path;
     bhdli->builderd = bu;
-    return *bhdli;
+    return bhdli;
   }
 }
