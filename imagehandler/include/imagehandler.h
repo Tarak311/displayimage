@@ -11,16 +11,14 @@
 #ifndef BUID_INC
 #include <builder/include/builder.h>
 #endif
-class builder;
+
 class builderlistd: public listd
 {public: builder* builderd;};
 
 
 class imagehandler {
 	public:
-			 imagehandler(image* im){
-		   this->imagesaved=im;
-		 }
+			 imagehandler(image*);
 		 ~imagehandler(){std::cout<<"Item deleted";}
 		 //imagehandler(void);
 		 imagehandler(const imagehandler&)=delete;
