@@ -13,7 +13,10 @@
 imagehandler::imagehandler(imagehandler& ih):outputimg(ih.outputimg),imagesaved(ih.imagesaved),path(ih.path){}
 imagehandler::imagehandler(imagehandler&& ih):outputimg(ih.outputimg),imagesaved(ih.imagesaved),path(ih.path){}
 
-imagehandler::imagehandler(image* im);
+imagehandler::imagehandler(image* im)
+{
+  this->imagesaved=im;
+}
 
 int imagehandler::showimage(std::string win,int flag)
 {
