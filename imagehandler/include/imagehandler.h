@@ -18,7 +18,7 @@ class builderlistd: public listd
 
 class imagehandler {
 	public:
-		inline imagehandler(image* im){
+			 imagehandler(image* im){
 		   this->imagesaved=im;
 		 }
 
