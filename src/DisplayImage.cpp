@@ -8,7 +8,7 @@ int main()
 {
 	builder bb;
 
-	std::shared_ptr<imagehandler>  bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE)->imagehandlerd->process(IMGHDTYPE).builderd->reatefromimg(IMGHDTYPE)->imagehandlerd;
+	std::shared_ptr<imagehandler>  bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE)->imagehandlerd->process(IMGHDTYPE).builderd->createfromimg(IMGHDTYPE)->imagehandlerd;
 
 	bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
   cv::waitKey(0);
