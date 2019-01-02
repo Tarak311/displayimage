@@ -6,7 +6,6 @@
 #ifndef IMG_INC
 #include <imagehandler/include/imagehandler.h>
 #endif
-#include <imagehandler/include/imagehandler.h>
 
 builder& builder::loadimage(std::string path)
 {

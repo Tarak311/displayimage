@@ -18,7 +18,7 @@ class builderlistd: public listd
 
 class imagehandler {
 	public:
-			 imagehandler(image*);
+			 imagehandler(std::shared_ptr<image>);
 		 ~imagehandler(){std::cout<<"Item deleted";}
 		 //imagehandler(void);
 		 imagehandler(const imagehandler&)=delete;
@@ -27,7 +27,7 @@ class imagehandler {
 		 int showimage(std::string win,int flag);
 		 virtual builderlistd& process(int);
 		 builder* handlerbuild;
-		 image *imagesaved;
+		 std::shared_ptr<image>  imagesaved;
 	private:
 
 		image *outputimg;
