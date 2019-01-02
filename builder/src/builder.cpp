@@ -30,6 +30,6 @@ std::shared_ptr<imhdlistd>  builder::createfromimg(int TYPE)
       imhdli->imagehandlerd=ih;
       std::cout<<"DEB::SS"<<std::endl;
       imhdli->type=IMGHDTYPE;
-      std::shared_ptr<imhdlistd> im = imhdli;
+       return imhdli;
     }
 }
