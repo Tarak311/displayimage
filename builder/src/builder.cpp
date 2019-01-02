@@ -23,7 +23,7 @@ std::shared_ptr<imhdlistd>  builder::createfromimg(int TYPE)
    if(TYPE==IMGHDTYPE)
    {
       std::cout<<"creating imagehandler object"<<std::endl;
-      ih->handlerbuild=this;
+      *(ih->handlerbuild)=*this;
       imhdli->imagehandlerd=ih;
       std::cout<<"DEB::SS"<<std::endl;
       imhdli->type=IMGHDTYPE;

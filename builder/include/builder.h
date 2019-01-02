@@ -41,7 +41,7 @@ struct image
 
 class builder{
 public:
-  builder& loadimage(std::string);
+  std::shared_ptr<builder> loadimage(std::string);
   std::shared_ptr<imhdlistd> createfromimg(int); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
   std::shared_ptr<image> imagebuild;
   std::string path;
