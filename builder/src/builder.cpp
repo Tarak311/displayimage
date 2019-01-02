@@ -12,7 +12,7 @@ std::shared_ptr<builder> builder::loadimage(std::string path)
   std::cout<<"loading image"<<std::endl;
   cv::Mat img_temp = cv::imread(path, cv::IMREAD_COLOR);
   image* iman =new image;
-  std::shared_ptr<image> immm = std::make_shared<image>(new image);
+  std::shared_ptr<image> immm(new image);
     std::cout<<"loaded image"<<std::endl;
   shared_from_this()->imagebuild=immm; //seg fault
   std::cout<<"loaded image2"<<std::endl;
