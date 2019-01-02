@@ -18,10 +18,10 @@ class builderlistd: public listd
 
 class imagehandler {
 	public:
-			 imagehandler(image* im){
+			 virtual imagehandler(image* im){
 		   this->imagesaved=im;
 		 }
-
+		 ~imagehandler(){std::cout<<"Item deleted";}
 		 //imagehandler(void);
 		 imagehandler(const imagehandler&)=delete;
 		 imagehandler(imagehandler&);
