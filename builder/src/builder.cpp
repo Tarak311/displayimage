@@ -14,10 +14,8 @@ std::shared_ptr<builder> builder::loadimage(std::string path)
   image* iman =new image;
   std::shared_ptr<image> immm(iman);
   this->imagebuild=immm; //seg fault
-  this->imagebuild->img = img_temp;
   std::cout<<"loaded image"<<std::endl;
-
-
+  this->imagebuild->img = img_temp;
   return shared_from_this();
 }
 
