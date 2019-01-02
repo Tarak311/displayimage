@@ -19,13 +19,13 @@ builder& builder::loadimage(std::string path)
 std::shared_ptr<imhdlistd>  builder::createfromimg(int TYPE)
 {
    std::shared_ptr<imhdlistd> imhdli;
-   std::shared_ptr<imagehandler> ih = std::make_shared<imagehandler>(this->imagebuild);
+   std::shared_ptr<imagehandler> ih(new imagehandler(this->imagebuild));
    if(TYPE==IMGHDTYPE)
    {
       std::cout<<"creating imagehandler object"<<std::endl;
       ih->handlerbuild=this;
-      std::cout<<"DEB::SS"<<std::endl;
       imhdli->imagehandlerd=ih;
+
       imhdli->type=IMGHDTYPE;
       std::shared_ptr<imhdlistd> im = imhdli;
     }
