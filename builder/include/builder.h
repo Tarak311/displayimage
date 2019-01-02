@@ -1,4 +1,6 @@
 #define IMGHDTYPE 001
+#pragma once
+
 #ifndef BUID_INC
 #ifndef IMG_INC
 #include<iostream>

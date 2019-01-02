@@ -1,3 +1,4 @@
+
 #ifndef BUID_INC
 #define TOBE_IMG_INC
 #include "include/builder.h"
@@ -5,7 +6,7 @@
 #ifndef IMG_INC
 #include <imagehandler/include/imagehandler.h>
 #endif
-
+#include <imagehandler/include/imagehandler.h>
 
 builder& builder::loadimage(std::string path)
 {

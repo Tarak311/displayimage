@@ -9,7 +9,7 @@ int main()
 	builder bb;
 	builderlistd hh;
 	std::shared_ptr<imagehandler>  bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE)->imagehandlerd;
-	bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
-  cv::waitKey(0);
+	//bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
+  //cv::waitKey(0);
 	return 0;
 }

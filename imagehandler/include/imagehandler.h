@@ -1,3 +1,4 @@
+#pragma once
 
 #ifndef IMG_INC
 #ifndef BUID_INC
