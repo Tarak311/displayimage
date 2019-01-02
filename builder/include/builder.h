@@ -34,7 +34,7 @@ struct image
   cv::Mat img;
   std::shared_ptr<image> output;
   std::shared_ptr<image> input;
-  imagehandler* handler;
+  //imagehandler* handler;
 };/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
 /******************************************************************************************************************************************************************************************************************************************************************************/
 
@@ -43,7 +43,7 @@ class builder : public std::enable_shared_from_this<builder>{
 public:
   std::shared_ptr<builder> loadimage(std::string);
   std::shared_ptr<imhdlistd> createfromimg(int); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
-  std::shared_ptr<image> imagebuild;
+  std::shared_ptr<image> imagebuild(new imagebuild);
   std::string path;
 };
 
