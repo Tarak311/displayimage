@@ -26,6 +26,6 @@ std::shared_ptr<imhdlistd>  builder::createfromimg(int TYPE)
       ih->handlerbuild=this;
       imhdli->imagehandlerd=ih;
       imhdli->type=IMGHDTYPE;
-      return imhdli;
+      std::shared_ptr<imhdlistd> im = imhdli;
     }
 }
