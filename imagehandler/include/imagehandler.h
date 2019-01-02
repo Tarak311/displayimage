@@ -18,7 +18,10 @@ class builderlistd: public listd
 
 class imagehandler {
 	public:
-		 imagehandler(image*);
+		inline imagehandler(image*){
+		   this->imagesaved=im;
+		 }
+
 		 //imagehandler(void);
 		 imagehandler(const imagehandler&)=delete;
 		 imagehandler(imagehandler&);
