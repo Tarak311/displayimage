@@ -23,6 +23,7 @@ class imhdlistd: public listd
 {
   public:
     std::shared_ptr<imagehandler> imagehandlerd;
+    int get(std::shared_ptr<imagehandler> imd){this.imagehandlerd=imd;}
 };
 
 struct image
