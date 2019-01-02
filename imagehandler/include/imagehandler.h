@@ -11,7 +11,7 @@
 #ifndef BUID_INC
 #include <builder/include/builder.h>
 #endif
-
+class builder;
 class builderlistd: public listd
 {public: builder* builderd;};
 

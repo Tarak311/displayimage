@@ -1,6 +1,7 @@
 #include<iostream>
 #include<opencv2/opencv.hpp>
 #include<string>
+#include <imagehandler/include/imagehandler.h>
 #include <builder/include/builder.h>
 std::string path;
 
