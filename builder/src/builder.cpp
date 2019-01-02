@@ -14,9 +14,9 @@ std::shared_ptr<builder> builder::loadimage(std::string path)
   image*  immm = new image;
   std::shared_ptr<image> ddj(immm);
   std::cout<<"loaded image"<<std::endl;
-  shared_from_this()->imagebuild = ddj ; //seg faul
+  //shared_from_this()->imagebuild = ddj ; //seg faul
+  shared_from_this()->imagebuild->img = img_temp;
   std::cout<<"loaded image2"<<std::endl;
-  this->imagebuild->img = img_temp;
   return shared_from_this();
 }
 
