@@ -7,7 +7,7 @@ std::string path;
 int main()
 {
 	builder bb;
-	std::shared_ptr<imagehandler>  bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE).imagehandlerd;
+	std::shared_ptr<imagehandler>  bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE)->imagehandlerd;
 	bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
   cv::waitKey(0);
 	return 0;
