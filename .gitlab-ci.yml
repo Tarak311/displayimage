@@ -9,7 +9,7 @@ build1:
      - echo "Building"
      - cd build && cmake .. 
      - make
-     - ls
+     - ./src/DisplayImage
 
    
 test1:
