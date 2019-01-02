@@ -3,6 +3,7 @@
 #ifndef IMG_INC
 #include<iostream>
 #include<opencv2/opencv.hpp>
+
 #endif
 #define BUID_INC
 #endif
@@ -10,7 +11,7 @@
 #ifndef IMG_INC
 class imagehandler;
 #endif
-
+#include<memory>
 /*************************************** To be moved to a seperate file *********************************************************************************************************************************************************/
 class listd
 {public: int type;};
