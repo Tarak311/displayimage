@@ -9,17 +9,9 @@
 
 
 
-imagehandler::imagehandler(std::string name){cv::Mat img_temp = cv::imread(name, cv::IMREAD_COLOR);this->img = &img_temp;}
 
-imagehandler::imagehandler(imagehandler& ih):img(ih.img),path(ih.path){} // ADD VARIABLES PERFORM SHALLOW COPY
-imagehandler::imagehandler(imagehandler&& ih):img(ih.img),path(ih.path){} // move constructor used
-
-imagehandler::imagehandler(cv::Mat& im){this->img=&im;} // PASSED BY REFRENCE - DEPRECATED : REMOVED
-imagehandler::imagehandler(cv::Mat&& im){this->img=&im;} // MOVE SCHEMATICS USED - DEPRECATED : REMOVED
-
-int imagehandler::showimage(std::string win,int flag){cv::namedWindow(win, cv::WINDOW_NORMAL);cv::imshow(win, *(this->img));return 0;}
-imagehandler& imagehandler::gethandler(){return *this;}
-image imagehandler::process(int i){ image imgst; imgst.path = this->path;imgst.img = *(this->img);imgst.input = this->imagesaved;imgst.buildimghd=&buildfuntion;this->outputimg[i]=&imgst ; return imgst;}
-cllist buildfuntion(int type,image& imm){if(type==0){cllist cli = imagehandler::handlerbuild.createfromimg(imm,type); return cli; }}
-//imagehandler::imagehandler(const imagehandler& ih) {this->img = ih.img;} //copy constructor -  deleted																																				// uninitalized VARIABLE
-// create  createfromimg funtion a
+imagehandler::imagehandler(imagehandler& ih):outputimg(ih.outputimg),imagesaved(ih.imagesaved),path(ih.path){}
+imagehandler::imagehandler(imagehandler&& ih):outputimg(ih.outputimg),imagesaved(ih.imagesaved),path(ih.path){}
+imagehandler::imagehandler(image* im){this->imagesaved=im;}
+int imagehandler::showimage(std::string win,int flag){cv::namedWindow(win, cv::WINDOW_AUTOSIZE);cv::imshow(win, (this->imagesaved->img));return 0;}             /*change to op from function*/
+builderlistd& imagehandler::process(int TYPE){ if(TYPE==IMGHDTYPE){image* im= new image; builderlistd* bhdli = new builderlistd();im->path = this->path;im->img = (this->imagesaved->img);im->input = this->imagesaved; builder* bu = new builder; bu->imagebuild = im; bu->path=this->path; bhdli->builderd = bu; return *bhdli;}}
