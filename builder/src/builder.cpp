@@ -13,11 +13,11 @@ std::shared_ptr<builder> builder::loadimage(std::string path)
  // image*  immm = new image;
   std::shared_ptr<image> immm(new image());
   std::cout<<"loaded image"<<std::endl;
-  shared_from_this()->imagebuild.reset(new image); //seg faul
+  std::shared_from_this()->imagebuild.reset(new image); //seg faul
  std::cout<<"before assign";
- shared_from_this()->imagebuild->img = img_temp;
+ std::shared_from_this()->imagebuild->img = img_temp;
   std::cout<<"loaded image2"<<std::endl;
-  return shared_from_this();
+  return std::shared_from_this();
 }
 
 std::shared_ptr<imhdlistd>  builder::createfromimg(int TYPE)
@@ -28,7 +28,7 @@ std::shared_ptr<imhdlistd>  builder::createfromimg(int TYPE)
    if(TYPE==IMGHDTYPE)
    {
       std::cout<<"creating imagehandler object"<<std::endl;
-       std::shared_ptr<builder> ihds = shared_from_this();
+       std::shared_ptr<builder> ihds = std::shared_from_this();
       ih->handlerbuild=ihds;
       imhdli->imagehandlerd=ih;
       std::cout<<"DEB::SS"<<std::endl;
