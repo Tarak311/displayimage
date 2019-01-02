@@ -14,10 +14,25 @@ class imagehandler;
 #include<memory>
 /*************************************** To be moved to a seperate file *********************************************************************************************************************************************************/
 class listd
-{public: int type;};
+{
+  public:
+    int type;
+  };
+
 class imhdlistd: public listd
-{public: imagehandler* imagehandlerd;};
-struct image { std::string path; cv::Mat img; image* output; image* input;imagehandler* handler;};/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
+{
+  public:
+    std::shared_ptr<imagehandler> imagehandlerd;
+};
+
+struct image
+{
+  std::string path;
+  cv::Mat img;
+  image* output;
+  image* input;
+  imagehandler* handler;
+};/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
 /******************************************************************************************************************************************************************************************************************************************************************************/
 
 
