@@ -9,15 +9,18 @@
 
 std::shared_ptr<builder> builder::loadimage(std::string path)
 {
+  std::cout<<"loading image"<<std::endl;
   cv::Mat img_temp = cv::imread(path, cv::IMREAD_COLOR);
   std::shared_ptr<image> immm(new image);
   this->imagebuild=immm;
   this->imagebuild->img = img_temp;
+  std::cout<<"loaded image"<<std::endl;
   return shared_from_this();
 }
 
 std::shared_ptr<imhdlistd>  builder::createfromimg(int TYPE)
 {
+   std::cout<<""<<std::endl;
    std::shared_ptr<imhdlistd> imhdli(new imhdlistd);
    std::shared_ptr<imagehandler> ih(new imagehandler(this->imagebuild));
    if(TYPE==IMGHDTYPE)
@@ -27,6 +30,7 @@ std::shared_ptr<imhdlistd>  builder::createfromimg(int TYPE)
       ih->handlerbuild=ihds;
       imhdli->imagehandlerd=ih;
       std::cout<<"DEB::SS"<<std::endl;
+      std::cout<<"created imagehandler"<<std::endl;
       imhdli->type=IMGHDTYPE;
       return imhdli;
     }
