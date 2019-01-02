@@ -18,7 +18,7 @@ builder& builder::loadimage(std::string path)
 
 std::shared_ptr<imhdlistd>  builder::createfromimg(int TYPE)
 {
-   std::shared_ptr<imhdlistd> imhdli;
+   std::shared_ptr<imhdlistd> imhdli(new imhdlistd);
    std::shared_ptr<imagehandler> ih(new imagehandler(this->imagebuild));
    if(TYPE==IMGHDTYPE)
    {
