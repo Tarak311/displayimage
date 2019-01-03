@@ -28,10 +28,10 @@ class imhdlistd: public listd
     //int get(std::shared_ptr<imagehandler> imd){std::shared_ptr<imagehandler> imagehandlerd1=imd;std::cout<<"setting value "<<std::endl;this->imagehandlerd.reset();this->imagehandlerd =imd;}
 };
 
-class image
+struct image
 {
  public:
- image(){std::cout<<"object const";}
+ //image(){std::cout<<"object const"<<std::endl;}
   std::string path;
   cv::Mat img;
   std::shared_ptr<image> output;
