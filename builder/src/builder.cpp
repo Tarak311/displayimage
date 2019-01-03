@@ -6,13 +6,15 @@
 #include <imagehandler/include/imagehandler.h>
 #endif
 
-std::shared_ptr<builder> builder::loadimage(std::string path)
+std::shared_ptr<builder> builder::loadimage(std::string path1)
 {
   std::cout<<"loading image"<<std::endl;
-  cv::Mat img_temp = cv::imread(path, cv::IMREAD_COLOR);
+  cv::Mat img_temp = cv::imread(path1, cv::IMREAD_COLOR);
  // image*  immm = new image;
   std::shared_ptr<image> immm(new image());
+  this->path=path1; 
   std::cout<<"loaded image"<<std::endl;
+
   this->imagebuild.reset(new image); //seg faul
  std::cout<<"before assign";
  shared_from_this()->imagebuild->img = img_temp;
