@@ -12,7 +12,7 @@
 
 imagehandler::imagehandler(imagehandler& ih):outputimg(ih.outputimg),imagesaved(ih.imagesaved),path(ih.path){}
 imagehandler::imagehandler(imagehandler&& ih):outputimg(ih.outputimg),imagesaved(ih.imagesaved),path(ih.path){}
-imagehandler::imagehandler(std::shared_ptr<image>* im){this->imagesaved=im;}
+imagehandler::imagehandler(std::shared_ptr<image> im){this->imagesaved=im;}
 int imagehandler::showimage(std::string win,int flag)
 {
     //cv::namedWindow(win, cv::WINDOW_NORMAL);

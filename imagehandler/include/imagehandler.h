@@ -18,7 +18,7 @@ class builderlistd: public listd
 
 class imagehandler {
 	public:
-		 imagehandler(std::shared_ptr<imagehandler>*);
+		 imagehandler(std::shared_ptr<imagehandler>);
 		 //imagehandler(void);
 		 imagehandler(const imagehandler&)=delete;
 		 imagehandler(imagehandler&);
