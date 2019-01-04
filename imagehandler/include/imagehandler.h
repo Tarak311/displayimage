@@ -27,10 +27,10 @@ class imagehandler {
 		 int showimage(std::string win,int flag);
 		 virtual std::shared_ptr<builderlistd> process(int);
 		 std::shared_ptr<builder> handlerbuild;
-		 std::shared_ptr<image>  imagesaved;
+		 image*  imagesaved;
 	private:
 
-		std::shared_ptr<image> outputimg;
+		image* outputimg;
 		std::string path;
 		std::string currentWindow;
 		int flags;
