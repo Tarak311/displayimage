@@ -17,7 +17,23 @@ class listd
 {public: int type;};
 class imhdlistd: public listd
 {public: imagehandler* imagehandlerd;};
-struct image { std::string path; cv::Mat img; image* output; image* input;imagehandler* handler;};/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
+
+class image
+{
+  image()
+  {
+    std::cout<<"image constructed"<<std::endl;
+  }
+  ~image()
+  {
+    std::cout<<" image object destroyed"<<std::endl;
+  }
+  std::string path;
+  cv::Mat img;
+  image* output;
+  image* input;
+  imagehandler* handler;
+};/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
 /******************************************************************************************************************************************************************************************************************************************************************************/
 
 

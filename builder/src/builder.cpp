@@ -22,7 +22,8 @@ imhdlistd&  builder::createfromimg(int TYPE)
       std::cout<<"creating imagehandler object"<<std::endl;
       imagehandler* ih = new imagehandler(this->imagebuild);
       ih->handlerbuild=this;imhdlistd* imhdli = new imhdlistd;
-      imhdli->imagehandlerd=ih; imhdli->type=IMGHDTYPE;
+      imhdli->imagehandlerd=ih;
+      imhdli->type=IMGHDTYPE;
       return *imhdli;
     }
   }
