@@ -34,8 +34,8 @@ class image
   image(){std::cout<<"object const"<<std::endl;}
   std::string path;
   cv::Mat img;
-  std::shared_ptr<image> output;
-  std::shared_ptr<image> input;
+  image* output;
+  image* input;
   //imagehandler* handler;
 };/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
 /******************************************************************************************************************************************************************************************************************************************************************************/
