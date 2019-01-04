@@ -28,7 +28,7 @@ class imhdlistd: public listd
     //int get(std::shared_ptr<imagehandler> imd){std::shared_ptr<imagehandler> imagehandlerd1=imd;std::cout<<"setting value "<<std::endl;this->imagehandlerd.reset();this->imagehandlerd =imd;}
 };
 
-class image 
+class image : std::enable_shared_from_this<image>
 {
  public:
   image(){std::cout<<"object const"<<std::endl;}
