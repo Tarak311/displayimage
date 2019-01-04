@@ -40,6 +40,7 @@ public:
 
 class builder{
 public:
+  ~builder(){std::cout << "deleting builder obj" << '\n';}
   builder& loadimage(std::string);
   int decrementobj();
   int incrementobj();
