@@ -7,23 +7,23 @@ build1:
   stage: build
   script:
      - echo "Building"
-     - cd build && cmake .. 
+     - cd build && cmake ..
      - make
-     - ./src/DisplayImage
+    
 
-   
+
 test1:
   stage: test
-  script: 
+  script:
     - echo "Do a test here"
     - echo "For example run a test suite"
-   
+
 test2:
   stage: test
-  script: 
+  script:
     - echo "Do another parallel test here"
     - echo "For example run a lint test"
-   
+
 deploy1:
   stage: deploy
   script:
