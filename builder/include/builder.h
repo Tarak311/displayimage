@@ -41,7 +41,7 @@ public:
 class builder{
 public:
   builder& loadimage(std::string);
-  imhdlistd& createfromimg(int,int cmd =0); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
+  imhdlistd& createfromimg(int); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
   std::shared_ptr<image> imagebuild;
   std::string path;
 };
