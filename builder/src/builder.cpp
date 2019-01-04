@@ -21,9 +21,13 @@ imhdlistd&  builder::createfromimg(int TYPE)
    {
       std::cout<<"creating imagehandler object"<<std::endl;
       imagehandler* ih = new imagehandler(this->imagebuild);
-      ih->handlerbuild=this;imhdlistd* imhdli = new imhdlistd;
-      imhdli->imagehandlerd=ih;
+      ih->handlerbuild=this;
+      imhdlistd* imhdli = new imhdlistd;
+      imhdli->imagehandlerd=ih;  
       imhdli->type=IMGHDTYPE;
       return *imhdli;
     }
   }
+int builder::decrementobj(){ return --counter;};
+int builder::incrementobj(){ return ++counter;};
+int builder::checkobj(){return counter;}
