@@ -13,7 +13,7 @@
 imagehandler::imagehandler(imagehandler& ih):outputimg(ih.outputimg),imagesaved(ih.imagesaved),path(ih.path){}
 imagehandler::imagehandler(imagehandler&& ih):outputimg(ih.outputimg),imagesaved(ih.imagesaved),path(ih.path){}
 
-imagehandler::imagehandler(std::shared_ptr<image> im)
+imagehandler::imagehandler(image *im)
 {
   this->imagesaved=im;
 }
