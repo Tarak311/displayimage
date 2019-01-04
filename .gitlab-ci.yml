@@ -9,15 +9,15 @@ build1:
      - echo "Building"
      - cd build && cmake ..
      - make
-     - mkdir ../test
-     - cp ./src/DisplayImage ../test/
 
-
+  artifacts:
+     paths:
+          - build/
 test1:
   stage: test
   script:
     - echo "Do a test here"
-    - ../test/DisplayImage
+    - ../src/DisplayImage
 
 test2:
   stage: test
