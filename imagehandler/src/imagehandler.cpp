@@ -17,27 +17,26 @@ imagehandler::imagehandler(std::shared_ptr<image> im)
 {
   this->imagesaved=im;
 }
-
 int imagehandler::showimage(std::string win,int flag)
 {
-  cv::namedWindow(win, cv::WINDOW_NORMAL);
-  cv::imshow(win, (this->imagesaved->img));
+  //cv::namedWindow(win, cv::WINDOW_NORMAL);
+  //cv::imshow(win, (this->imagesaved->img));
   return 0;
 }             /*change to op from function*/
 
-std::shared_ptr<builderlistd> imagehandler::process(int TYPE)
+builderlistd& imagehandler::process(int TYPE)
 {
   if(TYPE==IMGHDTYPE)
   {
     std::shared_ptr<image> im(new image);
-    std::shared_ptr<builderlistd> bhdli(new builderlistd());
+    builderlistd* bhdli = new builderlistd();
     im->path = this->path;
     im->img = (this->imagesaved->img);
     im->input = this->imagesaved;
-    std::shared_ptr<builder> bu(new builder);
+    builder* bu = new builder;
     bu->imagebuild = im;
     bu->path=this->path;
     bhdli->builderd = bu;
-    return bhdli;
+    return *bhdli;
   }
 }

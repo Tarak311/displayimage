@@ -12,11 +12,15 @@ build1:
     
 
 
+  artifacts:
+     paths:
+          - ./build/
 test1:
   stage: test
   script:
     - echo "Do a test here"
-    - echo "For example run a test suite"
+    - ls
+    - ./build/src/DisplayImage
 
 test2:
   stage: test
