@@ -16,7 +16,10 @@ class imagehandler;
 class listd
 {public: int type;};
 class imhdlistd: public listd
-{public: imagehandler* imagehandlerd;};
+{public:
+  imagehandler* imagehandlerd;
+
+};
 
 class image
 {
@@ -40,10 +43,16 @@ public:
 
 class builder{
 public:
+  ~builder(){std::cout << "deleting builder obj" << '\n';}
   builder& loadimage(std::string);
+  int decrementobj();
+  int incrementobj();
+  int checkobj();
   imhdlistd& createfromimg(int); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
-   std::shared_ptr<image> imagebuild;
+  std::shared_ptr<image> imagebuild;
   std::string path;
+private:
+  int counter = 0 ;
 };
 
 #ifndef IMG_INC
