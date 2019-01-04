@@ -18,7 +18,7 @@ test1:
   script:
     - echo "Do a test here"
     - ls
-    -  ./src/DisplayImage
+    - ./build/src/DisplayImage
 
 test2:
   stage: test
