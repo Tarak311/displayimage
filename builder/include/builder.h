@@ -15,7 +15,7 @@ class imagehandler;
 #endif
 #include<memory>
 /*************************************** To be moved to a seperate file *********************************************************************************************************************************************************/
-class listd
+class listd :std::enable_shared_from_this<listd>
 {
   public:
     int type;
@@ -28,10 +28,10 @@ class imhdlistd: public listd
     //int get(std::shared_ptr<imagehandler> imd){std::shared_ptr<imagehandler> imagehandlerd1=imd;std::cout<<"setting value "<<std::endl;this->imagehandlerd.reset();this->imagehandlerd =imd;}
 };
 
-struct image
+class image : std::enable_shared_from_this<image>
 {
  public:
- //image(){std::cout<<"object const"<<std::endl;}
+  image(){std::cout<<"object const"<<std::endl;}
   std::string path;
   cv::Mat img;
   std::shared_ptr<image> output;
