@@ -16,7 +16,10 @@ class imagehandler;
 class listd
 {public: int type;};
 class imhdlistd: public listd
-{public: imagehandler* imagehandlerd;};
+{public:
+  imagehandler* imagehandlerd;
+  std::shared_ptr<imagehandler> imghd;
+};
 
 class image
 {
