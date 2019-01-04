@@ -16,9 +16,9 @@ class builderlistd: public listd
 {public: std::shared_ptr<builder> builderd;};
 
 
-class imagehandler :public std::enable_shared_from_this<imagehandler>{
+class imagehandler {
 	public:
-		 imagehandler(image*);
+		 imagehandler(std::shared_ptr<image>);
 		 ~imagehandler(){std::cout<<"Item deleted";}
 		 //imagehandler(void);
 		 imagehandler(const imagehandler&)=delete;
@@ -27,10 +27,10 @@ class imagehandler :public std::enable_shared_from_this<imagehandler>{
 		 int showimage(std::string win,int flag);
 		 virtual std::shared_ptr<builderlistd> process(int);
 		 std::shared_ptr<builder> handlerbuild;
-		 image*  imagesaved;
+		 std::shared_ptr<image>  imagesaved;
 	private:
 
-		image* outputimg;
+		std::shared_ptr<image> outputimg;
 		std::string path;
 		std::string currentWindow;
 		int flags;
