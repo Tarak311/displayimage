@@ -25,7 +25,7 @@ imhdlistd&  builder::createfromimg(int TYPE, int cmd = 0)
       imagehandler* ih = new imagehandler(this->imagebuild);
       ih->handlerbuild=this;
       if (cmd=SHARDEN){
-        ih->handlershred=this;
+        ih->handlershred=&this;
       }
       imhdlistd* imhdli = new imhdlistd;
       imhdli->imagehandlerd=ih;
