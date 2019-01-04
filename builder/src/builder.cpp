@@ -31,4 +31,4 @@ imhdlistd&  builder::createfromimg(int TYPE)
   }
 int builder::decrementobj(){ return --counter;};
 int builder::incrementobj(){ return ++counter;};
-int buidler::checkobj(){return counter;}
+int builder::checkobj(){return counter;}
