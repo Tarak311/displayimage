@@ -24,8 +24,8 @@ imhdlistd&  builder::createfromimg(int TYPE, int cmd = 0)
       std::cout<<"creating imagehandler object"<<std::endl;
       imagehandler* ih = new imagehandler(this->imagebuild);
       ih->handlerbuild=this;
-      if (cmd=SHARDEN){
-        ih->handlershred=&this;
+      if (cmd=22){
+        ih->handlershred=this;
       }
       imhdlistd* imhdli = new imhdlistd;
       imhdli->imagehandlerd=ih;
