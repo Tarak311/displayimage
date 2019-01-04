@@ -16,7 +16,7 @@ class builderlistd: public listd
 {public: std::shared_ptr<builder> builderd;};
 
 
-class imagehandler {
+class imagehandler : std::enable_shared_from_this<imagehandler>{
 	public:
 		 imagehandler(image*);
 		 ~imagehandler(){std::cout<<"Item deleted";}
