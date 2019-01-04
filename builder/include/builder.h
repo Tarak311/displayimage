@@ -20,6 +20,7 @@ class imhdlistd: public listd
 
 class image
 {
+public:
   image()
   {
     std::cout<<"image constructed"<<std::endl;
