@@ -10,7 +10,7 @@ int main()
 	int enable = 0;
 	std::shared_ptr<builder> b(new builder());
 	if(enable=SHARDEN){b.loadimage("i.jpg").createfromimg(IMGHDTYPE,SHARDEN);}
-	imagehandler* bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE).imagehandlerd	;
+	//imagehandler* bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE).imagehandlerd	;
 	bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
   cv::waitKey(0);
 	return 0;
