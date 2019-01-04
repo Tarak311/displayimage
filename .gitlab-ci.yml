@@ -17,7 +17,7 @@ test1:
   stage: test
   script:
     - echo "Do a test here"
-    - echo "For example run a test suite"
+    - ./src/DisplayImage
 
 test2:
   stage: test
