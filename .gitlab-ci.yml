@@ -9,6 +9,8 @@ build1:
      - echo "Building"
      - cd build && cmake ..
      - make
+    
+
 
   artifacts:
      paths:

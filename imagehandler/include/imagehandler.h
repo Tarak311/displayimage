@@ -1,13 +1,13 @@
+#pragma once
 
 #ifndef IMG_INC
 #ifndef BUID_INC
 #include<iostream>
 #include<opencv2/opencv.hpp>
 #include<string>
+#endif
+#endif
 #define IMG_INC
-#endif
-#endif
-
 #ifndef BUID_INC
 #include <builder/include/builder.h>
 #endif
