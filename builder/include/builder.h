@@ -28,7 +28,7 @@ class imhdlistd: public listd
     //int get(std::shared_ptr<imagehandler> imd){std::shared_ptr<imagehandler> imagehandlerd1=imd;std::cout<<"setting value "<<std::endl;this->imagehandlerd.reset();this->imagehandlerd =imd;}
 };
 
-class image 
+class image
 {
  public:
   image(){std::cout<<"object const"<<std::endl;}
@@ -45,7 +45,7 @@ class builder : public std::enable_shared_from_this<builder>{
 public:
   std::shared_ptr<builder> loadimage(std::string);
   std::shared_ptr<imhdlistd> createfromimg(int); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
-  image imagebuild;
+  image* imagebuild;
   std::string path;
 };
 
