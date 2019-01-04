@@ -19,8 +19,8 @@ imagehandler::imagehandler(std::shared_ptr<image> im)
 }
 int imagehandler::showimage(std::string win,int flag)
 {
-    //cv::namedWindow(win, cv::WINDOW_NORMAL);
-  //cv::imshow(win, (this->imagesaved->img));
+  cv::namedWindow(win, cv::WINDOW_NORMAL);
+  cv::imshow(win, (this->imagesaved->img));
   return 0;
 }             /*change to op from function*/
 
