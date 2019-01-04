@@ -29,7 +29,7 @@ std::shared_ptr<builderlistd> imagehandler::process(int TYPE)
 {
   if(TYPE==IMGHDTYPE)
   {
-    std::shared_ptr<image> im(new image);
+    image* im = new image();
     std::shared_ptr<builderlistd> bhdli(new builderlistd());
     im->path = this->path;
     im->img = (this->imagesaved->img);
