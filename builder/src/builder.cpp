@@ -13,7 +13,7 @@ std::shared_ptr<builder> builder::loadimage(std::string path)
  // image*  immm = new image;
   image* immm =new image();
   std::cout<<"loaded image"<<std::endl;
-shared_from_this()->imagebuild = immm ; //seg faul
+this->imagebuild = immm ; //seg faul
  std::cout<<"before assign";
  shared_from_this()->imagebuild->img = img_temp;
   std::cout<<"loaded image2"<<std::endl;
