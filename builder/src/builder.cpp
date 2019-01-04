@@ -15,13 +15,19 @@ builder& builder::loadimage(std::string path)
   this->imagebuild->img = img_temp;
   return *this;
 }
-imhdlistd&  builder::createfromimg(int TYPE)
+imhdlistd&  builder::createfromimg(int TYPE, int cmd = 0)
 {
    if(TYPE==IMGHDTYPE)
    {
+
+
       std::cout<<"creating imagehandler object"<<std::endl;
       imagehandler* ih = new imagehandler(this->imagebuild);
-      ih->handlerbuild=this;imhdlistd* imhdli = new imhdlistd;
+      ih->handlerbuild=this;
+      if (cmd=SHARDEN){
+        ih->handlershred=this;
+      }
+      imhdlistd* imhdli = new imhdlistd;
       imhdli->imagehandlerd=ih;
       imhdli->type=IMGHDTYPE;
       return *imhdli;
