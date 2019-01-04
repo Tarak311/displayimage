@@ -31,8 +31,8 @@ public:
   }
   std::string path;
   cv::Mat img;
-  image* output;
-  image* input;
+  std::shared_ptr<imagehandler> output;
+  std::shared_ptr<imagehandler> input;
   imagehandler* handler;
 };/*  code which takes image properties and return imagehandler by calling buildvar = new imagetype::builder.builder().createfromimg().build() */
 /******************************************************************************************************************************************************************************************************************************************************************************/
@@ -42,7 +42,7 @@ class builder{
 public:
   builder& loadimage(std::string);
   imhdlistd& createfromimg(int); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
-  image* imagebuild;
+   std::shared_ptr<imagehandler> imagebuild;
   std::string path;
 };
 

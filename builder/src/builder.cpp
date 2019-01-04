@@ -10,7 +10,7 @@
 builder& builder::loadimage(std::string path)
 {
   cv::Mat img_temp = cv::imread(path, cv::IMREAD_COLOR);
-  image* immm = new image;
+  std::shared_ptr<imagehandler> immm(new image());
   this->imagebuild=immm;
   this->imagebuild->img = img_temp;
   return *this;
