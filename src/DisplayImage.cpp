@@ -7,11 +7,8 @@ std::string path;
 int main()
 {
 	builder bb;
-	std::shared_ptr<builder> b(new builder());
 	imagehandler* bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE).imagehandlerd;
 	bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
-	delete bbn;
-	std::cout << "deleted oj" << '\n';
-	cv::waitKey(0);
+  cv::waitKey(0);
 	return 0;
 }
