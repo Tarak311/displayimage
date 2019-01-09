@@ -7,25 +7,25 @@ build1:
   stage: build
   script:
      - echo "Building"
-     - cd build && cmake .. 
+     - cd build && cmake ..
      - make
-     
-     
-   
+
+  artifacts:
+     paths:
+          - ./build/
 test1:
   stage: test
-  script: 
+  script:
     - echo "Do a test here"
     - ls
-    
-    
-   
+    - ./build/src/DisplayImage
+
 test2:
   stage: test
-  script: 
+  script:
     - echo "Do another parallel test here"
     - echo "For example run a lint test"
-   
+
 deploy1:
   stage: deploy
   script:

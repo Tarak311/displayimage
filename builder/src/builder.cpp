@@ -1,9 +1,33 @@
-#ifndef BUILD_INC
-#define BUID_INC
+#ifndef BUID_INC
+#define TOBE_IMG_INC
+#include "include/builder.h"
 #endif
 #ifndef IMG_INC
 #include <imagehandler/include/imagehandler.h>
 #endif
-#include<iostream>
-#include<opencv2/opencv.hpp>
-#include "include/builder.h"
+
+
+builder& builder::loadimage(std::string path)
+{
+  cv::Mat img_temp = cv::imread(path, cv::IMREAD_COLOR);
+  std::shared_ptr<image> immm(new image());
+  this->imagebuild=immm;
+  this->imagebuild->img = img_temp;
+  return *this;
+}
+imhdlistd&  builder::createfromimg(int TYPE)
+{
+   if(TYPE==IMGHDTYPE)
+   {
+      std::cout<<"creating imagehandler object"<<std::endl;
+      imagehandler* ih = new imagehandler(this->imagebuild);
+      ih->handlerbuild=this;
+      imhdlistd* imhdli = new imhdlistd;
+      imhdli->imagehandlerd=ih;  
+      imhdli->type=IMGHDTYPE;
+      return *imhdli;
+    }
+  }
+int builder::decrementobj(){ return --counter;};
+int builder::incrementobj(){ return ++counter;};
+int builder::checkobj(){return counter;}
