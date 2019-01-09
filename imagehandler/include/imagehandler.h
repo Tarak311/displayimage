@@ -25,7 +25,7 @@ class imagehandler {
 		 int showimage(std::string win,int flag);
 		 virtual builderlistd& process(int);
 		 builder* handlerbuild;
-		 std::shared_ptr <builder> handlershred;
+		 std::shared_ptr <builder> handlershred;// not necssary 
 		 std::shared_ptr<image> imagesaved;
 	private:
 
