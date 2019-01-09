@@ -1,4 +1,3 @@
-
 #ifndef IMG_INC
 #ifndef BUID_INC
 #include<iostream>
@@ -18,15 +17,16 @@ class builderlistd: public listd
 
 class imagehandler {
 	public:
-		 imagehandler(image*);
-		 //imagehandler(void);
+		 imagehandler(std::shared_ptr<image>);
+		 ~imagehandler(void){if ((this->handlerbuild->decrementobj()) == 0){delete handlerbuild;}};
 		 imagehandler(const imagehandler&)=delete;
 		 imagehandler(imagehandler&);
 		 imagehandler(imagehandler&&);
 		 int showimage(std::string win,int flag);
 		 virtual builderlistd& process(int);
 		 builder* handlerbuild;
-		 image *imagesaved;
+		 std::shared_ptr <builder> handlershred;
+		 std::shared_ptr<image> imagesaved;
 	private:
 
 		image *outputimg;

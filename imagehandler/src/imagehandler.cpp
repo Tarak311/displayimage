@@ -12,11 +12,18 @@
 
 imagehandler::imagehandler(imagehandler& ih):outputimg(ih.outputimg),imagesaved(ih.imagesaved),path(ih.path){}
 imagehandler::imagehandler(imagehandler&& ih):outputimg(ih.outputimg),imagesaved(ih.imagesaved),path(ih.path){}
-imagehandler::imagehandler(image* im){this->imagesaved=im;}
+
+imagehandler::imagehandler(std::shared_ptr<image> im)
+{
+  this->imagesaved=im;
+}
 int imagehandler::showimage(std::string win,int flag)
 {
-    //cv::namedWindow(win, cv::WINDOW_NORMAL);
-  //cv::imshow(win, (this->imagesaved->img));
+  int i =0;
+  if(i==1){
+  cv::namedWindow(win, cv::WINDOW_NORMAL);
+  cv::imshow(win, (this->imagesaved->img));
+}
   return 0;
 }             /*change to op from function*/
 
@@ -24,7 +31,7 @@ builderlistd& imagehandler::process(int TYPE)
 {
   if(TYPE==IMGHDTYPE)
   {
-    image* im= new image;
+    std::shared_ptr<image> im(new image);
     builderlistd* bhdli = new builderlistd();
     im->path = this->path;
     im->img = (this->imagesaved->img);
