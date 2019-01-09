@@ -1,34 +1,36 @@
-
 #ifndef IMG_INC
-#define IMG_INC
-#endif
-#ifndef BUILD_INC
-#include <builder/include/builder.h>
-#endif
+#ifndef BUID_INC
 #include<iostream>
 #include<opencv2/opencv.hpp>
 #include<string>
+#define IMG_INC
+#endif
+#endif
+
+#ifndef BUID_INC
+#include <builder/include/builder.h>
+#endif
+
+class builderlistd: public listd
+{public: builder* builderd;};
+
 
 class imagehandler {
-
 	public:
-
-		 [[deprecated]]  imagehandler(std::string name);
-		 //[[deprecated]] imagehandler(cv::Mat& im);
-		 //[[deprecated]] imagehandler(cv::Mat&& im);
+		 imagehandler(std::shared_ptr<image>);
+		 ~imagehandler(void){if ((this->handlerbuild->decrementobj()) == 0){delete handlerbuild;}};
 		 imagehandler(const imagehandler&)=delete;
 		 imagehandler(imagehandler&);
 		 imagehandler(imagehandler&&);
 		 int showimage(std::string win,int flag);
-		 imagehandler& gethandler();
-		 virtual void process(void);
-
+		 virtual builderlistd& process(int);
+		 builder* handlerbuild;
+		 std::shared_ptr <builder> handlershred;
+		 std::shared_ptr<image> imagesaved;
 	private:
 
+		image *outputimg;
 		std::string path;
-		cv::Mat* img;
-		cv::Mat* opimg;
 		std::string currentWindow;
 		int flags;
-
 };
