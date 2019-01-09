@@ -1,4 +1,4 @@
-project(imagehandler)
-add_library(${PROJECT_NAME} src/imagehandler.cpp)
+project(imagehandler_dual)
+add_library(${PROJECT_NAME} src/imagehandler_dual.cpp)
 add_library(imghandler ALIAS ${PROJECT_NAME})
-target_include_directories( ${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR} PUBLIC ${PROJECT_SOURCE_DIR}/.. )
+target_include_directories( ${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR} PUBLIC ${PROJECT_SOURCE_DIR}/../.. )
