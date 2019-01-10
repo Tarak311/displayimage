@@ -1,4 +1,4 @@
-#ifndef IMG_INC
+	#ifndef IMG_INC
 #ifndef BUID_INC
 #include<iostream>
 #include<opencv2/opencv.hpp>
@@ -25,7 +25,7 @@ class imagehandler {
 		 int showimage(std::string win,int flag);
 		 virtual builderlistd& process(int);
 		 builder* handlerbuild;
-		 std::shared_ptr <builder> handlershred;// not necssary 
+		 std::shared_ptr <builder> handlershred;// not necssary
 		 std::shared_ptr<image> imagesaved;
 	private:
 
