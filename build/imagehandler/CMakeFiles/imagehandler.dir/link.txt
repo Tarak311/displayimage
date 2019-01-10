@@ -1,2 +1,0 @@
-/usr/bin/ar qc libimagehandler.a  CMakeFiles/imagehandler.dir/src/imagehandler.cpp.o
-/usr/bin/ranlib libimagehandler.a
