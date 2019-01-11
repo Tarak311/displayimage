@@ -1,11 +1,4 @@
-#ifndef BUID_INC
-#define TOBE_IMG_INC
-#include "include/builder.h"
-#endif
-#ifndef IMG_INC
-#include <imagehandler/include/imagehandler.h>
-#endif
-
+#include<builder/include/builder.h>
 
 builder& builder::loadimage(std::string path)
 {
@@ -23,7 +16,7 @@ imhdlistd&  builder::createfromimg(int TYPE)
       imagehandler* ih = new imagehandler(this->imagebuild);
       ih->handlerbuild=this;
       imhdlistd* imhdli = new imhdlistd;
-      imhdli->imagehandlerd=ih;  
+      imhdli->imagehandlerd=ih;
       imhdli->type=IMGHDTYPE;
       return *imhdli;
     }
