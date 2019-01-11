@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblistret.a  CMakeFiles/listret.dir/src/listret.cpp.o
+/usr/bin/ranlib liblistret.a

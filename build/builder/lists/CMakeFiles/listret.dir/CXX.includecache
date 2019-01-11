@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../builder/lists/../../builder/include/builder.h
+iostream
+-
+opencv2/opencv.hpp
+-
+memory
+-
+builder/lists/include/listret.h
+-
+imagehandler/include/imagehandler.h
+-
+
+../builder/lists/../../builder/lists/include/listret.h
+builder/include/builder.h
+-
+memory
+-
+
+../builder/lists/../../imagehandler/include/imagehandler.h
+iostream
+-
+opencv2/opencv.hpp
+-
+string
+-
+builder/include/builder.h
+-
+
+/container/home/tarak/workspace/opencv/git/displayimage/builder/lists/src/listret.cpp
+builder/include/builder.h
+-
+

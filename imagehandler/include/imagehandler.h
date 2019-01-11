@@ -27,6 +27,8 @@ class imagehandler {
 		 builder* handlerbuild;
 		 std::shared_ptr <builder> handlershred;// not necssary
 		 std::shared_ptr<image> imagesaved;
+		 imagehandler* parent;
+		 std::vector<imagehandler*> child;
 	private:
 
 		image *outputimg;

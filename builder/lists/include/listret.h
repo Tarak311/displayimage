@@ -9,12 +9,9 @@ class imagehandler;
 
 /*************************************** To be moved to a seperate file *********************************************************************************************************************************************************/
 class listd
-{public: int type;};
+{public: int type; imagehandler* parent_class; };
 class imhdlistd: public listd
-{public:
-  imagehandler* imagehandlerd;
-
-};
+{public: imagehandler* imagehandlerd;};
 
 class image
 {
