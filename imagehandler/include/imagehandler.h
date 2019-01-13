@@ -1,4 +1,4 @@
-	#ifndef IMG_INC
+#ifndef IMG_INC
 #ifndef BUID_INC
 #include<iostream>
 #include<opencv2/opencv.hpp>
@@ -13,7 +13,6 @@
 
 class builderlistd: public listd
 {public: builder* builderd;};
-
 
 class imagehandler {
 	public:
@@ -30,9 +29,8 @@ class imagehandler {
 		 imagehandler* parent;
 		 std::vector<imagehandler*> child;
 	private:
-
 		image *outputimg;
 		std::string path;
 		std::string currentWindow;
 		int flags;
-};
+	};
