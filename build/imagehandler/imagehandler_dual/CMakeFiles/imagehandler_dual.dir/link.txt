@@ -1,2 +1,0 @@
-/usr/bin/ar qc libimagehandler_dual.a  CMakeFiles/imagehandler_dual.dir/src/imagehandler_dual.cpp.o
-/usr/bin/ranlib libimagehandler_dual.a

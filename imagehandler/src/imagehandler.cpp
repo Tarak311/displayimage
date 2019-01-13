@@ -19,15 +19,22 @@ imagehandler::imagehandler(std::shared_ptr<image> im)
 }
 int imagehandler::showimage(std::string win,int flag)
 {
-  int i =0;
+  int i = 0;
   if(i==1){
+  //cv::Mat res;
   cv::namedWindow(win, cv::WINDOW_NORMAL);
+  //this->gim.upload(this->imagesaved->img);
+  //cv::cuda::threshold(this->gim,this->gom,180.0,255.0,CV_THRESH_BINARY);
+  //cv::threshold(this->imagesaved->img,res,128.0,255.0,CV_THRESH_BINARY);
+  //this->gom.download(res);
   cv::imshow(win, (this->imagesaved->img));
+  //cv::imshow(win,res);
+
 }
   return 0;
 }             /*change to op from function*/
 
-builderlistd& imagehandler::process(int TYPE)
+builderlistd& imagehandler::process(int TYPE,std::vector<image*> *v)
 {
   if(TYPE==IMGHDTYPE)
   {

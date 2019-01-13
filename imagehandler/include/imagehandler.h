@@ -22,15 +22,19 @@ class imagehandler {
 		 imagehandler(imagehandler&);
 		 imagehandler(imagehandler&&);
 		 int showimage(std::string win,int flag);
-		 virtual builderlistd& process(int);
+		 virtual builderlistd& process(int,std::vector<image*> *v = nullptr);
 		 builder* handlerbuild;
-		 std::shared_ptr <builder> handlershred;// not necssary
+		// std::shared_ptr <builder> handlershred;// not necssary
 		 std::shared_ptr<image> imagesaved;
+		 std::shared_ptr<image> outputimg;
 		 imagehandler* parent;
-		 std::vector<imagehandler*> child;
+
 	private:
-		image *outputimg;
+
 		std::string path;
 		std::string currentWindow;
+		//cv::cuda::GpuMat gim,gom;
 		int flags;
+		imagehandler& savestate(std::vector<image*>);
+		std::vector<imagehandler*> child;
 	};

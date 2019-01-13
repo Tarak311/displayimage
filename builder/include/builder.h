@@ -13,7 +13,8 @@ class imagehandler;
 #endif
 #include<memory>
 #include <builder/lists/include/listret.h>
-
+#include<opencv2/cudaimgproc.hpp>
+#include <opencv2/cudafilters.hpp>
 class builder{
 public:
   ~builder(){std::cout << "deleting builder obj" << '\n';}
