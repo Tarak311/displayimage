@@ -21,20 +21,14 @@ imagehandler::imagehandler(std::shared_ptr<image> im)
 int imagehandler::showimage(std::string win,int flag)
 {
   int i = 0;
-  if(i==1){
-  cv::namedWindow(win, cv::WINDOW_NORMAL);
-
-  cv::imshow(win, (this->imagesaved->img));
-}
+  if(i==1){cv::namedWindow(win, cv::WINDOW_NORMAL);cv::imshow(win, (this->imagesaved->img));}
   return 0;
 }             /*change to op from function*/
 
 builder& imagehandler::process(builder& bb,std::vector<image*> *v)
 {
-    bb.img = std::make_shared<image>(image());
+    bb.img = std::make_shared<image>(image(this->imagesaved->img));
     bb.path = this->path;
-
-    bb.img->img = (this->imagesaved->img);
     bb.img->loadgpu();
     cv::cuda::threshold(bb.img->gim,bb.img->gim,180.0,255.0,CV_THRESH_BINARY);
     bb.img->downloadgpu();

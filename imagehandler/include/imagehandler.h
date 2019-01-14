@@ -11,8 +11,8 @@
 #include <builder/include/builder.h>
 #endif
 
-class builderlistd: public listd
-{public: builder* builderd;};
+// class builderlistd: public listd
+//{public: builder* builderd;};
 
 class imagehandler: public baseclass {
 	public:

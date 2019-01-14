@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef BUID_INC
 #include <builder/include/builder.h>
 #endif
@@ -16,10 +18,18 @@ public:
    virtual int checkobj(){return counter;}
    int counter = 0 ;
 };
+class builder;
 class listd: public baseclass
-{public: int type; virtual listd ll_create(void){};};
+{public: int type; virtual listd* ll_create(void){};};
 class imhdlistd: public listd
-{public: imagehandler* imagehandlerd; std::vector<imagehandler*> ii; imagehandler* parent_class;};
+{
+  public:
+    imagehandler* imagehandlerd;
+    std::vector<imagehandler*> ii;
+    imagehandler* parent_class;
+    imhdlistd* ll_create(builder&);
+  };
+
 
 class image: public baseclass
 {
