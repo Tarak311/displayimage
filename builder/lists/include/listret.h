@@ -29,8 +29,10 @@ public:
   ~image(){std::cout<<" image object destroyed"<<std::endl;}
   std::string path;
   cv::Mat img;
-  cv::cuda::GpuMat gim;
   std::shared_ptr<image> output;
   std::shared_ptr<image> input;
+  void loadgpu(){this->gim.upload(this->img);}
+  void downloadgpu(){this->gim.download(this->img);}
+  cv::cuda::GpuMat gim;
   std::vector<imagehandler*> asotd; //use weak pointer in std::vector<> v
 };

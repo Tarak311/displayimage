@@ -16,17 +16,22 @@ class builderlistd: public listd
 
 class imagehandler: public baseclass {
 	public:
+
 		 imagehandler(std::shared_ptr<image>);
+
 		 ~imagehandler(void){if ((this->handlerbuild->decrementobj()) == 1){std::cout<<"deleting imagehandler object"<<std::endl; delete handlerbuild;}};
+
 		 imagehandler(const imagehandler&)=delete;
 		 imagehandler(imagehandler&);
 		 imagehandler(imagehandler&&);
+
 		 int showimage(std::string win,int flag);
 		 virtual builder& process(builder&,std::vector<image*> *v = nullptr);
-		 builder* handlerbuild;
+
 		 std::shared_ptr<image> imagesaved;
 		 std::shared_ptr<image> outputimg;
 		 imagehandler* parent;
+		 builder* handlerbuild;
 
 	private:
 
