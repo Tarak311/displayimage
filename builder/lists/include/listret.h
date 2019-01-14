@@ -10,6 +10,7 @@ class baseclass
 {
 public:
    baseclass(void){std::cout << "creating" << '\n';}
+   ~baseclass(void){std::cout << "deleting" << '\n';}
    virtual int decrementobj(){ return --counter;} //to be moved to base class
    virtual int incrementobj(){ return ++counter;}//to be moved to base class
    virtual int checkobj(){return counter;}
@@ -23,6 +24,7 @@ class imhdlistd: public listd
 class image: public baseclass
 {
 public:
+  image(cv::Mat ii){std::cout<<"image constructed"<<std::endl;this->img=ii;}
   image(){std::cout<<"image constructed"<<std::endl;}
   ~image(){std::cout<<" image object destroyed"<<std::endl;}
   std::string path;
@@ -31,5 +33,4 @@ public:
   std::shared_ptr<image> output;
   std::shared_ptr<image> input;
   std::vector<imagehandler*> asotd; //use weak pointer in std::vector<> v
-  imagehandler* handler;
 };

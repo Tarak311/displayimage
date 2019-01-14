@@ -15,11 +15,12 @@ imagehandler::imagehandler(imagehandler&& ih):outputimg(ih.outputimg),imagesaved
 
 imagehandler::imagehandler(std::shared_ptr<image> im)
 {
+  std::cout<<"creating imagehandler object"<<std::endl;
   this->imagesaved=im;
 }
 int imagehandler::showimage(std::string win,int flag)
 {
-  int i = 0;
+  int i = 1;
   if(i==1){
   //cv::Mat res;
   cv::namedWindow(win, cv::WINDOW_NORMAL);
@@ -29,24 +30,16 @@ int imagehandler::showimage(std::string win,int flag)
   //this->gom.download(res);
   cv::imshow(win, (this->imagesaved->img));
   //cv::imshow(win,res);
-
 }
   return 0;
 }             /*change to op from function*/
 
-builderlistd& imagehandler::process(int TYPE,std::vector<image*> *v)
+builder& imagehandler::process(builder& bb,std::vector<image*> *v)
 {
-  if(TYPE==IMGHDTYPE)
-  {
-    std::shared_ptr<image> im(new image);
-    builderlistd* bhdli = new builderlistd();
-    im->path = this->path;
-    im->img = (this->imagesaved->img);
-    im->input = this->imagesaved;
-    builder* bu = new builder;
-    bu->imagebuild = im;
-    bu->path=this->path;
-    bhdli->builderd = bu;
-    return *bhdli;
-  }
+    bb.img = std::make_shared<image>(image());
+    bb.path = this->path;
+    bb.img->img = (this->imagesaved->img);
+    bb.img->input = this->imagesaved;
+    return bb;
+
 }

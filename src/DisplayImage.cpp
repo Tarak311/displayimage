@@ -9,8 +9,9 @@ int main()
 	builder bb;
 	std::cout<<"Number of enabled GPUs are : "<<cv::cuda::getCudaEnabledDeviceCount()<<std::endl;
 	std::cout<<"Using GPU : "<<cv::cuda::DeviceInfo().name()<<std::endl;
-	imagehandler* bbn = bb.loadimage("i.jpg").createfromimg(IMGHDTYPE).imagehandlerd;
+	imagehandler* bbn = bb.loadimage("i.jpg").build().imagehandlerd;
 	bbn->showimage("Display Window", cv::WINDOW_AUTOSIZE);
+	delete bbn;
   cv::waitKey(0);
 	return 0;
 }

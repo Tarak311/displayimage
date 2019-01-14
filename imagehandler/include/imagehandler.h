@@ -17,14 +17,13 @@ class builderlistd: public listd
 class imagehandler: public baseclass {
 	public:
 		 imagehandler(std::shared_ptr<image>);
-		 ~imagehandler(void){if ((this->handlerbuild->decrementobj()) == 0){delete handlerbuild;}};
+		 ~imagehandler(void){if ((this->handlerbuild->decrementobj()) == 1){std::cout<<"deleting imagehandler object"<<std::endl; delete handlerbuild;}};
 		 imagehandler(const imagehandler&)=delete;
 		 imagehandler(imagehandler&);
 		 imagehandler(imagehandler&&);
 		 int showimage(std::string win,int flag);
-		 virtual builderlistd& process(int,std::vector<image*> *v = nullptr);
+		 virtual builder& process(builder&,std::vector<image*> *v = nullptr);
 		 builder* handlerbuild;
-		// std::shared_ptr <builder> handlershred;// not necssary
 		 std::shared_ptr<image> imagesaved;
 		 std::shared_ptr<image> outputimg;
 		 imagehandler* parent;
@@ -33,7 +32,6 @@ class imagehandler: public baseclass {
 
 		std::string path;
 		std::string currentWindow;
-		//cv::cuda::GpuMat gim,gom;
 		int flags;
 		imagehandler& savestate(std::vector<image*>);
 		std::vector<imagehandler*> child;

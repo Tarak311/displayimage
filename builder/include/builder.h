@@ -19,10 +19,9 @@ class builder:public baseclass{
 public:
   ~builder(){std::cout << "deleting builder obj" << '\n';}
   builder& loadimage(std::string);
-  imhdlistd& createfromimg(int); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
-  std::shared_ptr<image> imagebuild;
+  imhdlistd& build();
   std::string path;
-
+  std::shared_ptr<image> img;
 };
 
 #ifndef IMG_INC
@@ -30,4 +29,3 @@ public:
 #include <imagehandler/include/imagehandler.h>
 #endif
 #endif
-// function is supposed to create image struct and assign function pointer. These are process(),createfromimg().s

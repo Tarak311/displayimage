@@ -2,22 +2,15 @@
 
 builder& builder::loadimage(std::string path)
 {
-  cv::Mat img_temp = cv::imread(path, cv::IMREAD_COLOR);
-  std::shared_ptr<image> immm(new image());
-  this->imagebuild=immm;
-  this->imagebuild->img = img_temp;
+  this->img = std::make_shared<image>(image(cv::imread(path, cv::IMREAD_COLOR)));
   return *this;
 }
-imhdlistd&  builder::createfromimg(int TYPE)
+
+imhdlistd& builder::build()
 {
-   if(TYPE==IMGHDTYPE)
-   {
-      std::cout<<"creating imagehandler object"<<std::endl;
-      imagehandler* ih = new imagehandler(this->imagebuild);
-      ih->handlerbuild=this;
-      imhdlistd* imhdli = new imhdlistd;
-      imhdli->imagehandlerd=ih;
-      imhdli->type=IMGHDTYPE;
-      return *imhdli;
-    }
-  }
+  imagehandler* ih = new imagehandler(this->img);
+  ih->handlerbuild=this;
+  imhdlistd* imhdli = new imhdlistd;
+  imhdli->imagehandlerd=ih;
+  return *imhdli;
+}
