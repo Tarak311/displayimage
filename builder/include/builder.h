@@ -15,18 +15,14 @@ class imagehandler;
 #include <builder/lists/include/listret.h>
 #include<opencv2/cudaimgproc.hpp>
 #include <opencv2/cudafilters.hpp>
-class builder{
+class builder:public baseclass{
 public:
   ~builder(){std::cout << "deleting builder obj" << '\n';}
   builder& loadimage(std::string);
-  int decrementobj();
-  int incrementobj();
-  int checkobj();
   imhdlistd& createfromimg(int); // TODO: New fucntion for creating from image structure. Which should create imagehandler obj from image structure
   std::shared_ptr<image> imagebuild;
   std::string path;
-private:
-  int counter = 0 ;
+
 };
 
 #ifndef IMG_INC

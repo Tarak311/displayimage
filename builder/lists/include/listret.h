@@ -6,13 +6,21 @@ class imagehandler;
 #endif
 #include<memory>
 
-
-class listd
+class baseclass
+{
+public:
+   baseclass(void){std::cout << "creating" << '\n';}
+   virtual int decrementobj(){ return --counter;} //to be moved to base class
+   virtual int incrementobj(){ return ++counter;}//to be moved to base class
+   virtual int checkobj(){return counter;}
+   int counter = 0 ;
+};
+class listd: public baseclass
 {public: int type; virtual listd ll_create(void){};};
 class imhdlistd: public listd
 {public: imagehandler* imagehandlerd; std::vector<imagehandler*> ii; imagehandler* parent_class;};
 
-class image
+class image: public baseclass
 {
 public:
   image(){std::cout<<"image constructed"<<std::endl;}

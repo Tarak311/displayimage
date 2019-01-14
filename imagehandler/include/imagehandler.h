@@ -14,7 +14,7 @@
 class builderlistd: public listd
 {public: builder* builderd;};
 
-class imagehandler {
+class imagehandler: public baseclass {
 	public:
 		 imagehandler(std::shared_ptr<image>);
 		 ~imagehandler(void){if ((this->handlerbuild->decrementobj()) == 0){delete handlerbuild;}};

@@ -21,6 +21,3 @@ imhdlistd&  builder::createfromimg(int TYPE)
       return *imhdli;
     }
   }
-int builder::decrementobj(){ return --counter;};
-int builder::incrementobj(){ return ++counter;};
-int builder::checkobj(){return counter;}
